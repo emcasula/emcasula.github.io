@@ -157,7 +157,7 @@ const IndexPage = () => {
 
         <div class="inner">
           <form method="post" action="https://formsubmit.co/8a190bb170b130de0b8d01c967646eca">
-            <input type="hidden" name="_next" value="/ThankYou"></input>
+            <input type="hidden" name="_next" value="https://www.nutrizionistaemanuelacasula.it/ThankYou"></input>
             <div className="row gtr-uniform">
               <div className="col-6 col-12-xsmall">
                 <input type="text" name="name" id="name" defaultValue="" placeholder="Nome" />
