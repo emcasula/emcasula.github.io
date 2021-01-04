@@ -44,7 +44,7 @@ const IndexPage = () => {
           </h2>
             <p>
               Ciao, sono la dott.ssa Emanuela Casula e mi occupo di nutrizione.
-              Il mio obbiettivo è quello di giudare le persone verso il raggiungimento e mantenimento di uno stile alimentare sano.
+              Il mio obbiettivo è quello di guidare le persone verso il raggiungimento e mantenimento di uno stile alimentare sano.
               Sono inoltre attenta alla nutrizione sportiva per aiutare atleti, anche amatoriali, a raggiungere i loro obbiettivi di performance e di ricomposizione corporea tramite un'alimentazione adeguata e adatta alla specifica disciplina sportiva.
           </p>
           </header>
