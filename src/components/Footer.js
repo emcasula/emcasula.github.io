@@ -18,7 +18,7 @@ export default function Footer() {
       </ul>
       <ul className="copyright">
         <li>
-          {/* TODO P.IVA */}
+          P.IVA 03935130926
         </li>
       </ul>
     </footer>
