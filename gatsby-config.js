@@ -4,9 +4,16 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
+    siteUrl: `https://www.nutrizionistaemanuelacasula.it`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/ThankYou/`, `/404`, `/Generic/`, `/Elements/`],
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
