@@ -6,6 +6,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import '../assets/sass/main.scss';
 import Footer from './Footer';
 import SideBar from './Sidebar';
+import SEO from './SEO/SEO';
 
 class Layout extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, fullMenu } = this.props;
+    const { children, fullMenu, customSEO } = this.props;
     const { isPreloaded } = this.state;
     return (
       <StaticQuery
@@ -43,15 +44,7 @@ class Layout extends Component {
         `}
         render={data => (
           <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Dottoressa Emanuela Casula' },
-                { name: 'keywords', content: 'nutrizionista, biologo, cagliari, sardegna, emanuela casula, mangiare sano' },
-              ]}
-            >
-              <html lang="it" />
-            </Helmet>
+            {!customSEO && <SEO/>}
             <div
               className={
                 isPreloaded

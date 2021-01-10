@@ -4,14 +4,45 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
-    siteUrl: `https://www.nutrizionistaemanuelacasula.it`,
+    siteUrl: config.url,
+    pathPrefix: config.pathPrefix,
+    title: config.title,
+    titleAlt: config.titleAlt,
+    description: config.description,
+    banner: config.logo,
+    headline: config.headline,
+    siteLanguage: config.siteLanguage,
+    ogLanguage: config.ogLanguage,
+    author: config.author,
+    facebook: config.facebook,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links',
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         exclude: [`/ThankYou/`, `/404`, `/Generic/`, `/Elements/`],
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        name: "pages"
+      }
+    },
+    {
+      resolve: 'gatsby-remark-images',
+      options: {
+        maxWidth: 768,
+        linkImagesToOriginal: false
+      }
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [] // just in case those previously mentioned remark plugins sound cool :)
       }
     },
     {
