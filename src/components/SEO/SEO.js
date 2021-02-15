@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import Facebook from './Facebook'
+import picture from '../../assets/img/nutrizionista-emanuela-casula-cagliari.jpg';
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
@@ -34,6 +35,59 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
     // schema.org in JSONLD format
     // https://developers.google.com/search/docs/guides/intro-structured-data
     // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+    const schemaOrgBusiness = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "MedicalBusiness",
+                "@id": "http://nutrizionistaemanuelacasula.it/#organization",
+                name: "Nutrizionista Emanuela Casula",
+                url: "https://nutrizionistaemanuelacasula.it",
+                telephone: "+393515159912",
+                priceRange: "€€",
+                address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Via Stanislao Caboni 10",
+                    addressLocality: "Cagliari",
+                    postalCode: "09044",
+                    addressCountry: "IT"
+                },
+                geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: 39.211747,
+                    longitude: 9.128624
+                },
+                "sameAs": [
+                    "https://www.facebook.com/nutrizionistaemanuelacasula"
+                ],
+                image: [
+                    picture,
+                ],
+                currenciesAccepted: "EUR",
+                paymentAccepted: "Cash, Credit Card",
+            },
+            {
+                "@type": "ImageObject",
+                "@id": "http://nutrizionistaemanuelacasula.it/#primaryimage",
+                "inLanguage": "it-IT",
+                "url": picture,
+                "width": 801,
+                "height": 801,
+                "caption": "biologa nutrizionista a cagliari"
+              },
+            {
+                "@type": "WebSite",
+                "@id": "https://nutrizionistaemanuelacasula.it/#website",
+                "url": "hhttps://nutrizionistaemanuelacasula.it",
+                "name": "Biologa nutrizionista Cagliari, nutrizione sportiva",
+                "description": "Biologa nutrizionista Cagliari",
+                "publisher": {
+                    "@id": "https://nutrizionistaemanuelacasula.it"
+                },
+                "inLanguage": "it-IT"
+            },
+        ],
+    }
 
     const schemaOrgWebPage = {
         '@context': 'http://schema.org',
@@ -150,6 +204,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
                 <meta name="image" content={seo.image} />
                 <meta name="gatsby-starter" content="Gatsby Starter Prismic" />
                 {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
+                {<script type="application/ld+json">{JSON.stringify(schemaOrgBusiness)}</script>}
                 {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
                 {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
                 <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>

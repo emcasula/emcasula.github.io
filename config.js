@@ -14,7 +14,7 @@ module.exports = {
   author: 'Emanuela Casula',
   title: 'Nutrizionista Emanuela Casula Cagliari', // Navigation and Site Title
   titleAlt: 'Nutrizionista Emanuela Casula', // Title for JSONLD
-  description: 'Biologo Nutrizionista a Cagliari, anche online. Cosa mangaire dopo l\'allenamento',
+  description: 'Biologo Nutrizionista a Cagliari, anche online. Cosa mangiare dopo l\'allenamento',
   headline: 'Biologo Nutrizionista a Cagliari, anche online.', // Headline for schema.org JSONLD
   url: 'https://nutrizionistaemanuelacasula.it', // Domain of your site. No trailing slash!
   siteLanguage: 'it', // Language Tag on <html> element
