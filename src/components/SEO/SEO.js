@@ -58,7 +58,8 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
                     longitude: 9.128624
                 },
                 "sameAs": [
-                    "https://www.facebook.com/nutrizionistaemanuelacasula"
+                    "https://www.facebook.com/nutrizionistaemanuelacasula",
+                    "https://www.instagram.com/nutrizionista_emanuela_casula/"
                 ],
                 image: [
                     picture,
