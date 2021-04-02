@@ -25,6 +25,12 @@ module.exports = {
   socialLinks: [
     {
       style: 'brands',
+      icon: 'fa-whatsapp',
+      name: 'Whatsapp',
+      url: 'https://wa.me/393515159912',
+    },
+    {
+      style: 'brands',
       icon: 'fa-facebook',
       name: 'Facebook',
       url: 'https://www.facebook.com/nutrizionistaemanuelacasula',
