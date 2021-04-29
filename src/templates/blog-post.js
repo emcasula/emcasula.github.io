@@ -7,8 +7,6 @@ import config from '../../config'
 export default function Template({ data }) {
     const { markdownRemark: post } = data
 
-    console.log(data)
-
     return (
         <Layout customSEO>
             <SEO
