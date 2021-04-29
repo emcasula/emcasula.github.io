@@ -1,7 +1,7 @@
 module.exports = {
   //TODO refactor
-  siteTitle: 'Dottoressa Emanuela Casula', // <title>
-  manifestName: 'Emanuela Casula',
+  siteTitle: 'Dott.ssa Emanuela Casula', // <title>
+  manifestName: 'Dott.ssa Emanuela Casula',
   manifestShortName: 'Nutrizione', // max 12 characters
   manifestStartUrl: '/',
   manifestBackgroundColor: '#663399',
@@ -11,11 +11,11 @@ module.exports = {
   pathPrefix: `/`, // This path is subpath of your hosting https://domain/portfolio
   heading: 'Dott.ssa Emanuela Casula',
   subHeading: 'Biologa Nutrizionista',
-  author: 'Emanuela Casula',
+  author: 'Dott.ssa Emanuela Casula',
   title: 'Nutrizionista Emanuela Casula Cagliari', // Navigation and Site Title
   titleAlt: 'Nutrizionista Emanuela Casula', // Title for JSONLD
-  description: 'Biologo Nutrizionista a Cagliari, anche online. Cosa mangiare dopo l\'allenamento',
-  headline: 'Biologo Nutrizionista a Cagliari, anche online.', // Headline for schema.org JSONLD
+  description: 'Biologa Nutrizionista a Cagliari, anche online. Nutrizione sportiva e ricomposizione corporea',
+  headline: 'Biologa Nutrizionista a Cagliari, anche online.', // Headline for schema.org JSONLD
   url: 'https://nutrizionistaemanuelacasula.it', // Domain of your site. No trailing slash!
   siteLanguage: 'it', // Language Tag on <html> element
   logo: '/logos/logo-1024.png', // Used for SEO
