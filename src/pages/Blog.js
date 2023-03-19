@@ -39,20 +39,18 @@ export default function Index({ data }) {
     )
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM YYYY", locale: "it")
-            path
-          }
+export const pageQuery = graphql`query IndexQuery {
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    edges {
+      node {
+        excerpt(pruneLength: 250)
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM YYYY", locale: "it")
+          path
         }
       }
     }
   }
-`
+}`

@@ -1,5 +1,5 @@
 ---
-path: "/bodimage-per-visite-nutrizionali-online-cosa-e"
+path: "/bodimage-per-visite-nutrizionali-online-cosa-e/"
 date: 2021-01-10T17:12:33.962Z
 title: "Bodimage®: un valore aggiunto durante la visita"
 cover: '/cover.jpg'

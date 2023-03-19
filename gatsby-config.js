@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/ThankYou/`, `/404`, `/Generic/`, `/Elements/`],
+        excludes: [`/ThankYou/`, `/404`, `/Generic/`, `/Elements/`],
       }
     },
     {
