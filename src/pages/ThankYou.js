@@ -22,7 +22,7 @@ const IndexPage = () => (
               <h3>Grazie per avermi contattato</h3>
               <p>
               Ho ricevuto il tuo messaggio, ti risponderò al più presto.
-              Se hai urgenza puoi contattarmi al numero che trovi sui social qui in basso.
+              Se hai urgenza puoi contattarmi su Whatsapp al numero che trovi qui in basso.
             </p>
             </li>
           </ul>
