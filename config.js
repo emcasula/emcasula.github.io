@@ -1,6 +1,6 @@
 module.exports = {
   //TODO refactor
-  siteTitle: 'Nutrizionista Emanuela Casula', // <title>
+  siteTitle: 'Emanuela Casula, Biologa nutrizionista a Cagliari per benessere, ricomposizione corporea e nutrizione sportiva', // <title>
   manifestName: 'Nutrizionista Emanuela Casula',
   manifestShortName: 'Nutrizione', // max 12 characters
   manifestStartUrl: '/',
@@ -10,7 +10,7 @@ module.exports = {
   manifestIcon: 'src/assets/img/website-icon.png',
   pathPrefix: `/`, // This path is subpath of your hosting https://domain/portfolio
   heading: 'Dott.ssa Emanuela Casula',
-  subHeading: 'Biologa Nutrizionista',
+  subHeading: 'Biologa Nutrizionista a Cagliari',
   author: 'Nutrizionista Emanuela Casula',
   title: 'Nutrizionista Emanuela Casula Cagliari', // Navigation and Site Title
   titleAlt: 'Nutrizionista Emanuela Casula', // Title for JSONLD

@@ -11,45 +11,155 @@ const IndexPage = () => (
       </header>
       <section className="wrapper style5">
         <div className="inner">
+          <h4>INFORMATIVA PRIVACY (artt. 13 e 14 Regolamento UE 2016/679 – GDPR)</h4>
           <p>
-            La informiamo che i dati che fornirà al gestore del presente sito al momento della compilazione del "form contatti" (detto anche form mail) del sito stesso, saranno trattati nel rispetto del Regolamento UE 2016/679 (“GDPR”), Codice in materia di protezione dei dati personali. Il form contatti messo a disposizione sul sito ha il solo scopo di consentire ai visitatori del sito di contattare, qualora lo desiderino, il gestore del sito stesso, inviando tramite il suddetto form una email al gestore. La presente informativa riguarda i dati personali inviati dall’utente visitatore al momento della compilazione del form contatti. La informiamo del fatto che i dati che conferirà volontariamente tramite il form verranno tramutati in una email che eventualmente potrà essere conservata all’interno del sistema di ricezione di email utilizzato dal titolare del sito. Questi dati non verranno registrati su altri supporti o dispositivi, né verranno registrati altri dati derivanti dalla sua navigazione sul sito.
-          </p>
-          <h4>1. FINALITÀ DEL TRATTAMENTO DEI DATI PERSONALI</h4>
-          <p>
-            Le finalità del trattamento dei suoi dati sono le seguenti:
-
-            I dati da lei inviati verranno utilizzati al solo scopo di poterla eventualmente ricontattare tramite i riferimenti da lei lasciati tramite la sezione contatti per evadere eventuali sue richieste contenute nel messaggio da lei inviato tramite il form contatti messo a disposizione sul sito.
+            La presente informativa descrive le modalità di trattamento dei dati personali degli utenti che consultano il presente sito web e che, volontariamente, contattano il titolare tramite strumenti esterni.
           </p>
 
-          <h4>2. NATURA DEI DATI TRATTATI E MODALITÀ DEL TRATTAMENTO</h4>
+          <h4>1. TITOLARE DEL TRATTAMENTO</h4>
           <p>
-            a. I dati personali trattati saranno esclusivamente i dati comuni strettamente necessari e pertinenti alle finalità di cui al punto 1 che precede.
-            b. Il trattamento dei dati personali conferiti è realizzato per mezzo delle operazioni o del complesso delle operazioni indicate nel Regolamento UE 2016/679 (“GDPR”)
-            c. Il trattamento è svolto direttamente dall’organizzazione del titolare.
+            Il Titolare del trattamento è il gestore del presente sito web (di seguito “Titolare”).
           </p>
-          <h4>
-            3. NATURA DEL CONFERIMENTO E CONSEGUENZE DEL RIFIUTO
-          </h4>
           <p>
-          Non vi è alcun obbligo di conferire al gestore del presente sito i dati personali richiesti nella sezione contatti. Il conferimento dei dati tramite il suo contatto è facoltativo. Tuttavia il rifiuto al conferimento per le finalità di cui all’art. 1 determinerà l’impossibilità di contattare il gestore del sito web tramite i vari mezzi di contatto messi a disposizione sul sito.
+            Per qualsiasi richiesta relativa al trattamento dei dati personali, è possibile contattare il Titolare tramite i recapiti indicati sul sito.
           </p>
-          <h4>
-          4. TITOLARE DEL TRATTAMENTO
-          </h4>
+
+          <h4>2. TIPOLOGIA DI DATI TRATTATI</h4>
           <p>
-          Il titolare del presente sito web sarà titolare del trattamento dei dati.
+            Il presente sito non prevede la raccolta diretta di dati personali tramite form di contatto.
           </p>
-          <h4>
-          5. DIRITTI DELL’INTERESSATO
-          </h4>
           <p>
-          I soggetti ai quali i dati personali fanno riferimento hanno il diritto in qualunque momento di ottenere la conferma dell'esistenza o meno dei dati stessi, e di conoscerne il contenuto e l'origine, verificarne l'esattezza o richiedere l'aggiornamento, integrazione oppure la correzione (art. 7 D. Kgs. 196/03). Ai sensi del medesimo articolo, l'utente ha il diritto di chiedere la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione della legge e, in ogni caso, di opporsi al loro trattamento per motivi legittimi. Per richiedere la cancellazione dei propri dati personali basta contattare il Titolare dei Dati tramite uno dei mezzi di contatto messi a disposizione e chiedere espressamente di cancellare ogni dato personale fornito.
+            L’utente può tuttavia contattare il Titolare mediante strumenti esterni, quali:
           </p>
-          <h4>
-          6. DURATA DEL TRATTAMENTO
-          </h4>
           <p>
-          Il trattamento avrà una durata non superiore a quella necessaria alle finalità per le quali i dati sono stati raccolti.
+            - WhatsApp<br />
+            - piattaforma di prenotazione MioDottore
+          </p>
+          <p>
+            Attraverso tali canali possono essere trattati dati personali forniti volontariamente dall’utente, tra cui:
+          </p>
+          <p>
+            - dati identificativi (nome e cognome)<br />
+            - dati di contatto (numero di telefono, email)<br />
+            - eventuali dati relativi allo stato di salute (dati particolari ai sensi dell’art. 9 GDPR)
+          </p>
+
+          <h4>3. FINALITÀ DEL TRATTAMENTO</h4>
+          <p>
+            I dati personali sono trattati per le seguenti finalità:
+          </p>
+          <p>
+            - gestione delle richieste di contatto<br />
+            - gestione delle richieste di prenotazione<br />
+            - erogazione di consulenze nutrizionali<br />
+            - adempimento di obblighi di legge
+          </p>
+
+          <h4>4. BASE GIURIDICA DEL TRATTAMENTO</h4>
+          <p>
+            Il trattamento dei dati personali si fonda su:
+          </p>
+          <p>
+            - esecuzione di misure precontrattuali adottate su richiesta dell’interessato (art. 6, par. 1, lett. b GDPR)<br />
+            - consenso dell’interessato, in particolare per il trattamento di dati sanitari (art. 9, par. 2, lett. a GDPR)
+          </p>
+
+          <h4>5. MODALITÀ DEL TRATTAMENTO</h4>
+          <p>
+            Il trattamento dei dati avviene mediante strumenti elettronici e/o manuali, nel rispetto dei principi di liceità, correttezza, trasparenza, minimizzazione e sicurezza previsti dal GDPR.
+          </p>
+          <p>
+            Il Titolare adotta misure tecniche e organizzative adeguate per garantire la protezione dei dati personali.
+          </p>
+
+          <h4>6. UTILIZZO DI PIATTAFORME ESTERNE</h4>
+
+          <p><strong>WhatsApp</strong></p>
+          <p>
+            Il contatto tramite WhatsApp avviene su piattaforma esterna gestita da Meta Platforms Inc.
+          </p>
+          <p>
+            L’utilizzo di tale servizio comporta il trattamento dei dati personali da parte di un soggetto terzo, secondo le rispettive condizioni e privacy policy.
+          </p>
+          <p>
+            Il Titolare non ha controllo sulle modalità di trattamento dei dati effettuate da tale piattaforma.
+          </p>
+          <p>
+            Informativa: https://www.whatsapp.com/legal/privacy-policy
+          </p>
+
+          <p><strong>MioDottore</strong></p>
+          <p>
+            La prenotazione tramite MioDottore avviene su piattaforma esterna indipendente.
+          </p>
+          <p>
+            MioDottore opera come titolare autonomo del trattamento.
+          </p>
+          <p>
+            Il Titolare non ha controllo sulle modalità di trattamento dei dati effettuate da tale piattaforma.
+          </p>
+          <p>
+            Informativa: https://www.miodottore.it/privacy
+          </p>
+
+          <h4>7. LIMITI DI RESPONSABILITÀ DEL TITOLARE</h4>
+          <p>
+            Il Titolare è responsabile esclusivamente del trattamento dei dati personali ricevuti tramite i canali di contatto, nei limiti delle finalità indicate nella presente informativa.
+          </p>
+          <p>
+            Il Titolare non è responsabile del trattamento dei dati effettuato autonomamente dalle piattaforme esterne (WhatsApp, MioDottore).
+          </p>
+
+          <h4>8. NATURA DEL CONFERIMENTO</h4>
+          <p>
+            Il conferimento dei dati personali è facoltativo.
+          </p>
+          <p>
+            Il mancato conferimento dei dati comporta l’impossibilità di ottenere risposta o di usufruire dei servizi richiesti.
+          </p>
+
+          <h4>9. DESTINATARI DEI DATI</h4>
+          <p>
+            I dati personali potranno essere trattati esclusivamente dal Titolare e da eventuali soggetti autorizzati.
+          </p>
+          <p>
+            Non è prevista la diffusione dei dati.
+          </p>
+
+          <h4>10. TRASFERIMENTO DEI DATI</h4>
+          <p>
+            L’utilizzo di piattaforme esterne (es. WhatsApp) può comportare il trasferimento di dati personali verso Paesi extra UE.
+          </p>
+          <p>
+            Tali trasferimenti avvengono nel rispetto delle disposizioni previste dal GDPR.
+          </p>
+
+          <h4>11. PERIODO DI CONSERVAZIONE</h4>
+          <p>
+            I dati personali saranno conservati per il tempo strettamente necessario al perseguimento delle finalità per cui sono stati raccolti e nel rispetto degli obblighi di legge.
+          </p>
+
+          <h4>12. DIRITTI DELL’INTERESSATO</h4>
+          <p>
+            L’interessato può esercitare i diritti previsti dagli artt. 15 e ss. del GDPR, tra cui:
+          </p>
+          <p>
+            - diritto di accesso<br />
+            - diritto di rettifica<br />
+            - diritto alla cancellazione<br />
+            - diritto alla limitazione del trattamento<br />
+            - diritto di opposizione
+          </p>
+          <p>
+            Tali diritti possono essere esercitati nei confronti del Titolare con riferimento ai dati trattati direttamente dallo stesso.
+          </p>
+          <p>
+            Per i trattamenti effettuati dalle piattaforme esterne (WhatsApp, MioDottore), l’interessato dovrà fare riferimento alle rispettive informative privacy.
+          </p>
+
+          <h4>13. AGGIORNAMENTI</h4>
+          <p>
+            La presente informativa potrà essere soggetta a modifiche. Si invita pertanto l’utente a consultarla periodicamente.
           </p>
         </div>
       </section>
