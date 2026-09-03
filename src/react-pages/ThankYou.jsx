@@ -1,17 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-
 import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout fullMenu>
-    <Helmet
-      meta={[
-        { name: 'robots', content: 'noindex' },
-      ]}
-    >
-    </Helmet>
-    
     <section id="three" className="wrapper style3 special">
         <div className="inner">
           <header className="major">

@@ -9,7 +9,7 @@ import pic3 from '../assets/images/pic03.jpg';
 import bodybuilders from '../assets/images/body-builders.png';
 import bodybuilders_stanchi from '../assets/images/body-builders-stanchi.png';
 import emanuela_casula from '../assets/images/nutrizionista-emanuela-casula-2.png';
-import config from '../../config';
+import config from '../../config.mjs';
 import ContactMe from '../components/SEO/Contactme';
 
 const IndexPage = () => {
@@ -97,7 +97,7 @@ const IndexPage = () => {
       <section id="two" className="wrapper alt style2">
         <section className="spotlight">
           <div className="image">
-            <img src={emanuela_casula} alt="" />
+            <img src={emanuela_casula.src} alt="" />
           </div>
           <div className="content">
             <h2>
@@ -121,7 +121,7 @@ const IndexPage = () => {
         </section>
         <section className="spotlight">
           <div className="image">
-            <img src={bodybuilders_stanchi} alt="" />
+            <img src={bodybuilders_stanchi.src} alt="" />
           </div>
           <div className="content">
             <h2>
@@ -153,7 +153,7 @@ const IndexPage = () => {
 
         <section className="spotlight">
           <div className="image">
-            <img src={pic3} alt="" />
+            <img src={pic3.src} alt="" />
           </div>
           <div className="content">
             <h2>
@@ -176,7 +176,7 @@ const IndexPage = () => {
 
         <section className="spotlight">
           <div className="image">
-            <img src={bodybuilders} alt="" />
+            <img src={bodybuilders.src} alt="" />
           </div>
           <div className="content">
             <h2>
@@ -325,7 +325,7 @@ const IndexPage = () => {
           </header>
         </div>
 
-        <div class="inner">
+					<div className="inner">
           <ContactMe />
         </div>
       </section>

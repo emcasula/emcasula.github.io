@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ContactMe = () => {
-    const whatsappNumber = '393XXXXXXXXX'; // inserisci il numero in formato internazionale, senza +
-    const whatsappMessage = encodeURIComponent(
-        'Ciao, ti contatto dal sito per avere informazioni sui percorsi nutrizionali.'
-    );
-
     return (
         <>
             <div className="row gtr-uniform">
@@ -55,7 +50,7 @@ const ContactMe = () => {
                     <p style={{ marginBottom: '0.5rem' }}>
                         Utilizzando i canali di contatto esterni, i tuoi dati saranno
                         trattati secondo la{' '}
-                        <a href="/Privacy" target="_blank" rel="noreferrer">
+                        <a href="/Privacy/" target="_blank" rel="noreferrer">
                             Privacy Policy
                         </a>
                         .

@@ -1,17 +1,12 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-export default function Nav({ onMenuToggle = () => {} }) {
+export default function Nav() {
   return (
     <nav id="nav">
       <ul>
         <li className="special">
           <a
             href="#menu"
-            onClick={e => {
-              e.preventDefault();
-              onMenuToggle();
-            }}
             className="menuToggle"
           >
             <span>Menu</span>
@@ -19,27 +14,23 @@ export default function Nav({ onMenuToggle = () => {} }) {
           <div id="menu">
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <a href="/">Home</a>
               </li>
               <li>
-                <Link to="/ChiSono">Chi sono</Link>
+                <a href="/ChiSono/">Chi sono</a>
               </li>
               <li>
-                <Link to="/Blog">Blog</Link>
+                <a href="/Blog/">Blog</a>
               </li>
               <li>
-                <Link to="/Contatti">Contatti</Link>
+                <a href="/Contatti/">Contatti</a>
               </li>
               <li>
-                <Link to="/Privacy">Privacy</Link>
+                <a href="/Privacy/">Privacy</a>
               </li>
             </ul>
             <a
               className="close"
-              onClick={e => {
-                e.preventDefault();
-                onMenuToggle();
-              }}
               href="#menu"
             >
               {''}

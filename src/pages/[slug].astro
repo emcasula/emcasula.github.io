@@ -1,0 +1,20 @@
+---
+import config from '../../config.mjs';
+import PageShell from '../layouts/PageShell.astro';
+import BlogPost from '../templates/blog-post.jsx';
+import { getBlogPosts } from '../lib/blog.mjs';
+
+export function getStaticPaths() {
+  return getBlogPosts().map(post => ({
+    params: { slug: post.frontmatter.path.replace(/^\/+|\/+$/g, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const data = { markdownRemark: post };
+---
+
+<PageShell title={`${post.frontmatter.title} | ${config.titleAlt}`} article>
+  <BlogPost data={data} />
+</PageShell>

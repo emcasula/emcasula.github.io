@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   //TODO refactor
   siteTitle: 'Emanuela Casula, Biologa nutrizionista a Cagliari per benessere, ricomposizione corporea e nutrizione sportiva', // <title>
   manifestName: 'Nutrizionista Emanuela Casula',

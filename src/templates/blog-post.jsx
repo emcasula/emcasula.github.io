@@ -1,22 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO/SEO"
-import config from '../../config'
 
 export default function Template({ data }) {
     const { markdownRemark: post } = data
 
     return (
-        <Layout customSEO>
-            <SEO
-                title={`${post.frontmatter.title} | ${config.titleAlt}`}
-                //pathname={location.pathname}
-                //desc={data.description}
-                //node={prismicPost}
-                //TODO
-                article
-            />
+        <Layout>
             <article id="main">
                 <header>
                     <h2>{post.frontmatter.title}</h2>
@@ -38,17 +27,3 @@ export default function Template({ data }) {
         </Layout>
     )
 }
-
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        date(formatString: "DD MMMM YYYY", locale: "it")
-        path
-        title
-        cover
-      }
-    }
-  }
-`

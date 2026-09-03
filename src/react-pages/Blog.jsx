@@ -1,5 +1,4 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 
 
@@ -22,7 +21,7 @@ export default function Index({ data }) {
                                 return (
                                     <div className="blog-post-preview" key={post.id}>
                                         <h2>
-                                            <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+                                            <a href={post.frontmatter.path}>{post.frontmatter.title}</a>
                                         </h2>
                                         <p>{post.frontmatter.date}</p>
                                         <p>{post.excerpt}</p>
@@ -38,19 +37,3 @@ export default function Index({ data }) {
         </Layout>
     )
 }
-
-export const pageQuery = graphql`query IndexQuery {
-  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
-    edges {
-      node {
-        excerpt(pruneLength: 250)
-        id
-        frontmatter {
-          title
-          date(formatString: "DD MMMM YYYY", locale: "it")
-          path
-        }
-      }
-    }
-  }
-}`

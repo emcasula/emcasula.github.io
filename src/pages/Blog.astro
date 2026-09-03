@@ -1,0 +1,12 @@
+---
+import PageShell from '../layouts/PageShell.astro';
+import BlogPage from '../react-pages/Blog.jsx';
+import { getBlogPosts } from '../lib/blog.mjs';
+
+const edges = getBlogPosts().map(post => ({ node: post }));
+const data = { allMarkdownRemark: { edges } };
+---
+
+<PageShell>
+  <BlogPage data={data} />
+</PageShell>
