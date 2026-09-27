@@ -10,7 +10,7 @@ const excludedRoutes = new Set([
 ]);
 
 export default defineConfig({
-  site: 'https://nutrizionistaemanuelacasula.it',
+  site: 'https://www.nutrizionistaemanuelacasula.it',
   trailingSlash: 'ignore',
   integrations: [
     react(),

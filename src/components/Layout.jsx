@@ -6,8 +6,9 @@ import SideBar from './Sidebar';
 const Layout = ({ children, fullMenu }) => (
   <div className="landing main-body is-preload">
     <div id="page-wrapper">
+      <a className="skip-link" href="#page-content">Vai al contenuto</a>
       <SideBar fullMenu={fullMenu} />
-      {children}
+      <div id="page-content" tabIndex={-1}>{children}</div>
       <Footer />
     </div>
   </div>

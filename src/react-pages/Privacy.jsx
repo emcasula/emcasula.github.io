@@ -4,19 +4,19 @@ import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout fullMenu>
-    <article id="main">
+    <article id="main" role="main">
       <header>
-        <h2>TRATTAMENTO DATI PERSONALI</h2>
-        <h3>Informativa ai sensi del Regolamento UE 2016/679 (“GDPR”)</h3>
+        <h1>Informativa privacy</h1>
+        <p>Informativa ai sensi del Regolamento UE 2016/679 (“GDPR”)</p>
       </header>
       <section className="wrapper style5">
         <div className="inner">
-          <h4>INFORMATIVA PRIVACY (artt. 13 e 14 Regolamento UE 2016/679 – GDPR)</h4>
+          <h2>INFORMATIVA PRIVACY (artt. 13 e 14 Regolamento UE 2016/679 – GDPR)</h2>
           <p>
             La presente informativa descrive le modalità di trattamento dei dati personali degli utenti che consultano il presente sito web e che, volontariamente, contattano il titolare tramite strumenti esterni.
           </p>
 
-          <h4>1. TITOLARE DEL TRATTAMENTO</h4>
+          <h2>1. TITOLARE DEL TRATTAMENTO</h2>
           <p>
             Il Titolare del trattamento è il gestore del presente sito web (di seguito “Titolare”).
           </p>
@@ -24,7 +24,7 @@ const IndexPage = () => (
             Per qualsiasi richiesta relativa al trattamento dei dati personali, è possibile contattare il Titolare tramite i recapiti indicati sul sito.
           </p>
 
-          <h4>2. TIPOLOGIA DI DATI TRATTATI</h4>
+          <h2>2. TIPOLOGIA DI DATI TRATTATI</h2>
           <p>
             Il presente sito non prevede la raccolta diretta di dati personali tramite form di contatto.
           </p>
@@ -44,7 +44,7 @@ const IndexPage = () => (
             - eventuali dati relativi allo stato di salute (dati particolari ai sensi dell’art. 9 GDPR)
           </p>
 
-          <h4>3. FINALITÀ DEL TRATTAMENTO</h4>
+          <h2>3. FINALITÀ DEL TRATTAMENTO</h2>
           <p>
             I dati personali sono trattati per le seguenti finalità:
           </p>
@@ -55,7 +55,7 @@ const IndexPage = () => (
             - adempimento di obblighi di legge
           </p>
 
-          <h4>4. BASE GIURIDICA DEL TRATTAMENTO</h4>
+          <h2>4. BASE GIURIDICA DEL TRATTAMENTO</h2>
           <p>
             Il trattamento dei dati personali si fonda su:
           </p>
@@ -64,7 +64,7 @@ const IndexPage = () => (
             - consenso dell’interessato, in particolare per il trattamento di dati sanitari (art. 9, par. 2, lett. a GDPR)
           </p>
 
-          <h4>5. MODALITÀ DEL TRATTAMENTO</h4>
+          <h2>5. MODALITÀ DEL TRATTAMENTO</h2>
           <p>
             Il trattamento dei dati avviene mediante strumenti elettronici e/o manuali, nel rispetto dei principi di liceità, correttezza, trasparenza, minimizzazione e sicurezza previsti dal GDPR.
           </p>
@@ -72,7 +72,7 @@ const IndexPage = () => (
             Il Titolare adotta misure tecniche e organizzative adeguate per garantire la protezione dei dati personali.
           </p>
 
-          <h4>6. UTILIZZO DI PIATTAFORME ESTERNE</h4>
+          <h2>6. UTILIZZO DI PIATTAFORME ESTERNE</h2>
 
           <p><strong>WhatsApp</strong></p>
           <p>
@@ -102,7 +102,7 @@ const IndexPage = () => (
             Informativa: https://www.miodottore.it/privacy
           </p>
 
-          <h4>7. LIMITI DI RESPONSABILITÀ DEL TITOLARE</h4>
+          <h2>7. LIMITI DI RESPONSABILITÀ DEL TITOLARE</h2>
           <p>
             Il Titolare è responsabile esclusivamente del trattamento dei dati personali ricevuti tramite i canali di contatto, nei limiti delle finalità indicate nella presente informativa.
           </p>
@@ -110,7 +110,7 @@ const IndexPage = () => (
             Il Titolare non è responsabile del trattamento dei dati effettuato autonomamente dalle piattaforme esterne (WhatsApp, MioDottore).
           </p>
 
-          <h4>8. NATURA DEL CONFERIMENTO</h4>
+          <h2>8. NATURA DEL CONFERIMENTO</h2>
           <p>
             Il conferimento dei dati personali è facoltativo.
           </p>
@@ -118,7 +118,7 @@ const IndexPage = () => (
             Il mancato conferimento dei dati comporta l’impossibilità di ottenere risposta o di usufruire dei servizi richiesti.
           </p>
 
-          <h4>9. DESTINATARI DEI DATI</h4>
+          <h2>9. DESTINATARI DEI DATI</h2>
           <p>
             I dati personali potranno essere trattati esclusivamente dal Titolare e da eventuali soggetti autorizzati.
           </p>
@@ -126,7 +126,7 @@ const IndexPage = () => (
             Non è prevista la diffusione dei dati.
           </p>
 
-          <h4>10. TRASFERIMENTO DEI DATI</h4>
+          <h2>10. TRASFERIMENTO DEI DATI</h2>
           <p>
             L’utilizzo di piattaforme esterne (es. WhatsApp) può comportare il trasferimento di dati personali verso Paesi extra UE.
           </p>
@@ -134,12 +134,12 @@ const IndexPage = () => (
             Tali trasferimenti avvengono nel rispetto delle disposizioni previste dal GDPR.
           </p>
 
-          <h4>11. PERIODO DI CONSERVAZIONE</h4>
+          <h2>11. PERIODO DI CONSERVAZIONE</h2>
           <p>
             I dati personali saranno conservati per il tempo strettamente necessario al perseguimento delle finalità per cui sono stati raccolti e nel rispetto degli obblighi di legge.
           </p>
 
-          <h4>12. DIRITTI DELL’INTERESSATO</h4>
+          <h2>12. DIRITTI DELL’INTERESSATO</h2>
           <p>
             L’interessato può esercitare i diritti previsti dagli artt. 15 e ss. del GDPR, tra cui:
           </p>
@@ -157,7 +157,7 @@ const IndexPage = () => (
             Per i trattamenti effettuati dalle piattaforme esterne (WhatsApp, MioDottore), l’interessato dovrà fare riferimento alle rispettive informative privacy.
           </p>
 
-          <h4>13. AGGIORNAMENTI</h4>
+          <h2>13. AGGIORNAMENTI</h2>
           <p>
             La presente informativa potrà essere soggetta a modifiche. Si invita pertanto l’utente a consultarla periodicamente.
           </p>

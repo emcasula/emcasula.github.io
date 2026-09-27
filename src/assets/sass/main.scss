@@ -6,7 +6,7 @@
 @use 'libs/breakpoints';
 @use 'libs/html-grid';
 @import 'fontawesome-all.min.css';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic&display=swap');
 
 /*
 	Spectral by HTML5 UP
@@ -170,7 +170,7 @@
 		margin: 0 0 functions.size(element-margin) 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, .site-name {
 		color: functions.palette(fg-bold);
 		font-weight: functions.font(weight-extrabold);
 		letter-spacing: functions.size(letter-spacing-alt);
@@ -184,7 +184,7 @@
 		}
 	}
 
-	h2 {
+	h1, h2 {
 		font-size: 1.35em;
 		line-height: 1.75em;
 
@@ -1488,7 +1488,7 @@
 		width: 100%;
 		z-index: functions.misc(z-index-base);
 
-		h1 {
+		.site-name {
 			@include vendor.vendor('transition', 'opacity #{functions.duration(transitions)} ease');
 			height: inherit;
 			left: 1.25em;
@@ -1573,7 +1573,7 @@
 		&.alt {
 			background: transparent;
 
-			h1 {
+			.site-name {
 				@include vendor.vendor('pointer-events', 'none');
 				opacity: 0;
 			}
@@ -1593,7 +1593,7 @@
 		position: relative;
 		text-align: center;
 
-		h2 {
+		h1, h2 {
 			@include vendor.vendor('transform', 'scale(1)');
 			@include vendor.vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
 			display: inline-block;
@@ -1691,7 +1691,7 @@
 			height: auto;
 			min-height: 0;
 
-			h2 {
+			h1, h2 {
 				font-size: 1.25em;
 			}
 
@@ -1707,7 +1707,7 @@
 
 	body.is-preload, .main-body.is-preload {
 		#banner {
-			h2 {
+			h1, h2 {
 				@include vendor.vendor('transform', 'scale(0.95)');
 				opacity: 0;
 
@@ -1786,7 +1786,7 @@
 			background-size: cover;
 			text-align: center;
 
-			h2 {
+			h1, h2 {
 				font-size: 1.75em;
 				margin: 0 0 (functions.size(element-margin) * 0.25) 0;
 			}
@@ -1817,7 +1817,7 @@
 			@include breakpoints.breakpoint('<=small') {
 				@include mixins.padding(5em, 3em);
 
-				h2 {
+				h1, h2 {
 					font-size: 1.25em;
 					margin: 0 0 (functions.size(element-margin) * 0.5) 0;
 				}
@@ -1839,6 +1839,10 @@
 		@include mixins.padding(6em, 0);
 		background-color: color.adjust(functions.palette(bg), $lightness: -8%);
 		text-align: center;
+
+		> nav {
+			margin-bottom: 1.5em;
+		}
 
 		.icons {
 			font-size: 1.25em;
@@ -1936,3 +1940,23 @@
 			}
 		}
 	}
+
+/* SEO semantics and keyboard access; original Spectral presentation above. */
+#header .site-name { font-size: 1em; }
+.breadcrumbs { padding: 4.5em 1.5em 1em; background: #2e3842; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .6em; list-style: none; margin: 0; padding: 0; }
+.breadcrumbs li + li::before { content: '/'; margin-right: .6em; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid currentColor !important; outline-offset: 4px; }
+#menu { overflow-y: auto; }
+#menu a { min-height: 44px; }
+#menu .close { min-width: 44px; }
+.skip-link { position: fixed; top: -100px; left: 1em; background: #fff; color: #1d3557; padding: .75em; z-index: 10002; }
+.skip-link:focus { top: .5em; }
+#page-content:focus { outline: none; }
+/* Prevent long editorial text from escaping original responsive containers. */
+#main > header, .wrapper > .inner { overflow-wrap: break-word; }
+.table-wrapper { overflow-wrap: normal; }
+.publication-list a { overflow-wrap: anywhere; }
+/* Dimensions reserve space without changing original spotlight proportions. */
+.spotlight .image img { height: auto; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

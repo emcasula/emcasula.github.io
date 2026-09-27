@@ -3,10 +3,10 @@ import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout fullMenu>
-    <section id="three" className="wrapper style3 special">
+    <section role="main" id="three" className="wrapper style3 special">
         <div className="inner">
           <header className="major">
-            <h2>Grazie!</h2>
+            <h1>Grazie!</h1>
           </header>
           <ul className="features">
             <li className="icon solid fa-thumbs-up full-width">

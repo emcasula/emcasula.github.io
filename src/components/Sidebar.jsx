@@ -4,9 +4,9 @@ import Nav from './Nav';
 export default function SideBar({ fullMenu }) {
   return (
     <header id="header" className={`${fullMenu ? '' : 'alt'}`}>
-      <h1>
+      <p className="site-name">
         <a href="/">Dott.ssa Emanuela Casula</a>
-      </h1>
+      </p>
       <div className=" ">
         <Nav />
       </div>

@@ -1,137 +1,57 @@
 ---
 import config from '../../config.mjs';
+import { professional } from '../data/professional.mjs';
 import picture from '../assets/img/nutrizionista-emanuela-casula-cagliari.jpg';
+import favicon from '../assets/img/website-icon.png';
 
-const {
-  title = config.title,
-  description = config.description,
-  banner = config.logo,
-  pathname = '',
-  article = false,
-  noindex = false,
-} = Astro.props;
-
-const image = `${config.url}${banner}`;
-const url = `${config.url}${pathname}`;
-const buildTime = new Date().toISOString().slice(0, 10);
-const isProduction = import.meta.env.PROD;
-
-const schemaOrgBusiness = {
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbLabel?: string;
+  banner?: string;
+  article?: boolean;
+  noindex?: boolean;
+  datePublished?: string;
+  dateModified?: string;
+}
+const { title, description, breadcrumbLabel = title, banner = picture.src,
+  article = false, noindex = false, datePublished, dateModified } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/$/, '') === '/404' ? '/404.html' : Astro.url.pathname === '/' || Astro.url.pathname.endsWith('.html')
+  ? Astro.url.pathname : `${Astro.url.pathname.replace(/\/$/, '')}/`;
+const url = new URL(pathname, config.url).href;
+const image = new URL(banner, config.url).href;
+const personId = `${config.url}/#person`;
+const businessId = `${config.url}/#studio`;
+const websiteId = `${config.url}/#website`;
+const breadcrumbs = [{ name: 'Home', url: `${config.url}/` }];
+if (article) breadcrumbs.push({ name: 'Blog', url: `${config.url}/Blog/` });
+if (pathname !== '/') breadcrumbs.push({ name: breadcrumbLabel, url });
+const schema = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'MedicalBusiness',
-      '@id': 'http://nutrizionistaemanuelacasula.it/#organization',
-      name: 'Nutrizionista Emanuela Casula',
-      url: 'https://nutrizionistaemanuelacasula.it',
-      telephone: '+393515159912',
-      priceRange: '€€',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Via Stanislao Caboni 10',
-        addressLocality: 'Cagliari',
-        postalCode: '09044',
-        addressCountry: 'IT',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 39.211747,
-        longitude: 9.128624,
-      },
-      sameAs: [
-        'https://www.facebook.com/nutrizionistaemanuelacasula',
-        'https://www.instagram.com/nutrizionista_emanuela_casula/',
-      ],
-      image: [picture.src],
-      currenciesAccepted: 'EUR',
-      paymentAccepted: 'Cash, Credit Card',
-    },
-    {
-      '@type': 'ImageObject',
-      '@id': 'http://nutrizionistaemanuelacasula.it/#primaryimage',
-      inLanguage: 'it-IT',
-      url: picture.src,
-      width: 801,
-      height: 801,
-      caption: 'biologa nutrizionista a cagliari',
-    },
-    {
-      '@type': 'WebSite',
-      '@id': 'https://nutrizionistaemanuelacasula.it/#website',
-      url: 'hhttps://nutrizionistaemanuelacasula.it',
-      name: 'Biologa nutrizionista Cagliari, nutrizione sportiva',
-      description: 'Biologa nutrizionista Cagliari',
-      publisher: { '@id': 'https://nutrizionistaemanuelacasula.it' },
-      inLanguage: 'it-IT',
-    },
+    { '@type': 'Person', '@id': personId, name: 'Emanuela Casula',
+      jobTitle: 'Biologa Nutrizionista', url: `${config.url}/ChiSono/`,
+      image: new URL(picture.src, config.url).href,
+      workLocation: { '@id': businessId },
+      sameAs: [professional.booking, 'https://iris.unica.it/cris/rp/rp29895?type=all', ...config.socialLinks.filter(link => ['Facebook', 'Instagram'].includes(link.name)).map(link => link.url)] },
+    { '@type': 'MedicalBusiness', '@id': businessId, name: 'Emanuela Casula — Biologa Nutrizionista',
+      url: `${config.url}/Contatti/`, telephone: professional.phone, image,
+      address: { '@type': 'PostalAddress', streetAddress: professional.address.street,
+        addressLocality: professional.address.city, postalCode: professional.address.postalCode,
+        addressCountry: professional.address.country } },
+    { '@type': 'WebSite', '@id': websiteId, url: `${config.url}/`,
+      name: config.titleAlt, inLanguage: config.siteLanguage, publisher: { '@id': personId } },
+    { '@type': article ? 'BlogPosting' : 'WebPage', '@id': `${url}#${article ? 'article' : 'webpage'}`,
+      url, name: title, headline: article ? breadcrumbLabel : title, description, image,
+      inLanguage: config.siteLanguage, isPartOf: { '@id': websiteId },
+      author: { '@id': personId }, publisher: { '@id': personId },
+      ...(article ? { mainEntityOfPage: url, datePublished, ...(dateModified ? { dateModified } : {}) } : {}) },
+    ...(breadcrumbs.length > 1 ? [{ '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`,
+      itemListElement: breadcrumbs.map((crumb, index) => ({ '@type': 'ListItem',
+        position: index + 1, name: crumb.name, item: crumb.url })) }] : []),
   ],
 };
-
-const schemaOrgWebPage = {
-  '@context': 'http://schema.org',
-  '@type': 'WebPage',
-  url: config.url,
-  headline: config.headline,
-  inLanguage: config.siteLanguage,
-  mainEntityOfPage: config.url,
-  description: config.description,
-  name: config.title,
-  author: { '@type': 'Person', name: config.author },
-  copyrightHolder: { '@type': 'Person', name: config.author },
-  copyrightYear: '2021',
-  creator: { '@type': 'Person', name: config.author },
-  publisher: { '@type': 'Person', name: config.author },
-  datePublished: '2021-01-10T10:30:00+01:00',
-  dateModified: buildTime,
-  image: { '@type': 'ImageObject', url: `${config.url}${config.logo}` },
-};
-
-const schemaArticle = article
-  ? {
-      '@context': 'http://schema.org',
-      '@type': 'Article',
-      author: { '@type': 'Person', name: config.author },
-      copyrightHolder: { '@type': 'Person', name: config.author },
-      copyrightYear: '2021',
-      creator: { '@type': 'Person', name: config.author },
-      publisher: {
-        '@type': 'Organization',
-        name: config.author,
-        logo: { '@type': 'ImageObject', url: `${config.url}${config.logo}` },
-      },
-      description,
-      headline: title,
-      inLanguage: config.siteLanguage,
-      url,
-      name: title,
-      image: { '@type': 'ImageObject', url: image },
-      mainEntityOfPage: url,
-    }
-  : null;
-
-const itemListElement = [
-  {
-    '@type': 'ListItem',
-    item: { '@id': config.url, name: 'Homepage' },
-    position: 1,
-  },
-];
-
-if (article) {
-  itemListElement.push({
-    '@type': 'ListItem',
-    item: { '@id': url, name: title },
-    position: 2,
-  });
-}
-
-const breadcrumb = {
-  '@context': 'http://schema.org',
-  '@type': 'BreadcrumbList',
-  description: 'Breadcrumbs list',
-  name: 'Breadcrumbs',
-  itemListElement,
-};
+const isProduction = import.meta.env.PROD;
 ---
 
 <!doctype html>
@@ -142,9 +62,11 @@ const breadcrumb = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="image" content={image} />
-    <meta name="gatsby-starter" content="Gatsby Starter Prismic" />
+    <link rel="canonical" href={url} />
+    <link rel="icon" type="image/png" href={favicon.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     {noindex && <meta name="robots" content="noindex" />}
-    <meta property="og:site_name" content={config.facebook} />
+    <meta property="og:site_name" content={config.titleAlt} />
     <meta property="og:locale" content={config.ogLanguage} />
     <meta property="og:url" content={url} />
     <meta property="og:type" content={article ? 'article' : 'website'} />
@@ -154,23 +76,48 @@ const breadcrumb = {
     <meta property="og:image:alt" content={description} />
     <meta name="theme-color" content={config.manifestThemeColor} />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrgBusiness)} />
-    {!article && <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrgWebPage)} />}
-    {article && <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />}
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
   </head>
   <body>
+    {breadcrumbs.length > 1 && <nav class="breadcrumbs" aria-label="Percorso di navigazione"><ol>
+      {breadcrumbs.map((crumb, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{crumb.name}</span> : <a href={crumb.url}>{crumb.name}</a>}</li>)}
+    </ol></nav>}
     <slot />
     <script is:inline>
       setTimeout(() => {
         document.querySelector('.main-body')?.classList.remove('is-preload');
       }, 100);
 
-      document.querySelectorAll('.menuToggle, #menu .close').forEach(toggle => {
-        toggle.addEventListener('click', event => {
-          event.preventDefault();
-          toggle.closest('header')?.querySelector('#nav')?.parentElement?.classList.toggle('is-menu-visible');
-        });
+      const menu = document.querySelector('#menu');
+      const trigger = document.querySelector('.menuToggle');
+      const container = document.querySelector('#nav')?.parentElement;
+      function setMenu(open) {
+        container?.classList.toggle('is-menu-visible', open);
+        trigger?.setAttribute('aria-expanded', String(open));
+        if (menu) menu.inert = !open;
+        if (open) menu?.querySelector('a')?.focus();
+        else trigger?.focus();
+      }
+      if (menu) menu.inert = true;
+      trigger?.addEventListener('click', event => {
+        event.preventDefault();
+        setMenu(trigger.getAttribute('aria-expanded') !== 'true');
+      });
+      menu?.querySelector('.close')?.addEventListener('click', event => {
+        event.preventDefault();
+        setMenu(false);
+      });
+      menu?.addEventListener('keydown', event => {
+        if (event.key === 'Escape') { event.preventDefault(); setMenu(false); }
+        if (event.key === 'Tab') {
+          const links = [...menu.querySelectorAll('a')];
+          const first = links[0], last = links[links.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault(); last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault(); first.focus();
+          }
+        }
       });
 
       document.querySelectorAll('a[href="#cta"], a[href="#one"]').forEach(link => {

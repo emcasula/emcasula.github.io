@@ -3,12 +3,14 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
 
-import pic1 from '../assets/images/pic01.jpg';
-import pic2 from '../assets/images/pic02.jpg';
-import pic3 from '../assets/images/pic03.jpg';
-import bodybuilders from '../assets/images/body-builders.png';
-import bodybuilders_stanchi from '../assets/images/body-builders-stanchi.png';
-import emanuela_casula from '../assets/images/nutrizionista-emanuela-casula-2.png';
+import pic3 from '../assets/images/pic03-1200.webp';
+import pic3_small from '../assets/images/pic03-480.webp';
+import bodybuilders from '../assets/images/body-builders-1200.webp';
+import bodybuilders_small from '../assets/images/body-builders-480.webp';
+import bodybuilders_stanchi from '../assets/images/body-builders-stanchi-1200.webp';
+import bodybuilders_stanchi_small from '../assets/images/body-builders-stanchi-480.webp';
+import emanuela_casula from '../assets/images/nutrizionista-emanuela-casula-2-1200.webp';
+import emanuela_casula_small from '../assets/images/nutrizionista-emanuela-casula-2-480.webp';
 import config from '../../config.mjs';
 import ContactMe from '../components/SEO/Contactme';
 
@@ -16,9 +18,10 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <main id="main-content">
       <section id="banner">
         <div className="inner">
-          <h2>{config.heading}</h2>
+          <h1>{config.heading}</h1>
           <p>{config.subHeading}</p>
           <p>Nutrizione sportiva, benessere e ricomposizione corporea</p>
           <ul className="actions special">
@@ -42,10 +45,10 @@ const IndexPage = () => {
         <div className="inner">
           <header className="major">
             <h2>
-              Nutrizione sportiva basata sulla scienza, per chi vuole risultati reali
+              Nutrizione sportiva basata sulle evidenze scientifiche
             </h2>
             <p>
-              Aiuto sportivi e persone comuni a ottenere risultati <strong>concreti</strong> senza diete rigide ma con un metodo sostenibile costruito <strong>su di te</strong>.
+              Accompagno sportivi e persone comuni in un percorso nutrizionale senza diete rigide ma con un metodo sostenibile costruito <strong>su di te</strong>.
             </p>
             <p>
               Preparo percorsi nutrizionali <strong>personalizzati</strong> per chi vuole migliorare salute, composizione corporea e performance, dal paziente sedentario allo sportivo amatoriale.
@@ -54,14 +57,14 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section id="one" className="wrapper style3 special">
+      <section id="per-te" className="wrapper style3 special">
         <div className="inner">
           <header className="major">
             <h2>
               Questo percorso è per te se
             </h2>
             <p>
-              Vuoi migliorale la tua forma fisica
+              Vuoi migliorare la tua forma fisica
             </p>
             <p>
               Ti alleni ma non vedi risultati
@@ -83,12 +86,12 @@ const IndexPage = () => {
         <div className="inner">
           <header className="major">
             <h2>
-              Chi sono
+              <a href="/ChiSono/">Chi sono</a>
             </h2>
             <p>
-              Sono la dott.ssa Emanuela Casula, biologa nutrizionista. Mi occupo di aiutare le persone a migliorare la propria alimentazione <strong>in modo sostenibile</strong> con un'attenzione particolare alla <strong>nutrizione sportiva</strong> e alla <strong>ricomposizione corporea</strong>.
+              Sono la dott.ssa Emanuela Casula, biologa nutrizionista. Mi occupo di aiutare le persone a migliorare la propria alimentazione <strong>in modo sostenibile</strong> con un'attenzione particolare alla <strong><a href="/nutrizione-sportiva-cagliari/">nutrizione sportiva</a></strong> e alla <strong><a href="/ricomposizione-corporea-cagliari/">ricomposizione corporea</a></strong>.
               <br />
-              Nel mio lavoro unisco <strong>approccio scientifico e ascolto empatico</strong>, perchè ogni percorso deve essere <strong>efficace</strong> ma anche <strong>realistico</strong> nella vita quotidiana.
+              Nel mio lavoro unisco <strong>approccio scientifico e ascolto empatico</strong>, perché ogni percorso deve essere <strong>efficace</strong> ma anche <strong>realistico</strong> nella vita quotidiana.
             </p>
           </header>
         </div>
@@ -97,14 +100,14 @@ const IndexPage = () => {
       <section id="two" className="wrapper alt style2">
         <section className="spotlight">
           <div className="image">
-            <img src={emanuela_casula.src} alt="" />
+            <img src={emanuela_casula.src} srcSet={`${emanuela_casula_small.src} ${emanuela_casula_small.width}w, ${emanuela_casula.src} ${emanuela_casula.width}w`} sizes="(max-width: 736px) 100vw, 45vw" width={emanuela_casula.width} height={emanuela_casula.height} loading="lazy" decoding="async" alt="Emanuela Casula, Biologa Nutrizionista" />
           </div>
           <div className="content">
             <h2>
               Formazione ed esperienza
             </h2>
             <p>
-              Mi sono laureata in Scienze degli Alimenti e della Nutrizione e ho conseguito un <strong>Dottorato di ricerca (PhD)</strong> in Medicina Molecolare e Traslazionale, sviluppando un approccio basato sull’evidenza scientifica e sulla comprensione dei meccanismi cellulari.
+              Mi sono laureata in Scienze degli Alimenti e della Nutrizione e ho conseguito un <strong>Dottorato di ricerca (PhD)</strong> in Medicina Molecolare e Traslazionale, sviluppando un approccio basato sull’<a href="/pubblicazioni-scientifiche/">evidenza scientifica</a> e sulla comprensione dei meccanismi cellulari.
             </p>
             <p>
               Negli anni ho approfondito la nutrizione sportiva partecipando a corsi di formazione e convegni dedicati, per rimanere aggiornata sulle strategie più efficaci per migliorare performance, recupero e composizione corporea.
@@ -121,13 +124,13 @@ const IndexPage = () => {
         </section>
         <section className="spotlight">
           <div className="image">
-            <img src={bodybuilders_stanchi.src} alt="" />
+            <img src={bodybuilders_stanchi.src} srcSet={`${bodybuilders_stanchi_small.src} ${bodybuilders_stanchi_small.width}w, ${bodybuilders_stanchi.src} ${bodybuilders_stanchi.width}w`} sizes="(max-width: 736px) 100vw, 45vw" width={bodybuilders_stanchi.width} height={bodybuilders_stanchi.height} loading="lazy" decoding="async" alt="" />
           </div>
           <div className="content">
             <h2>
               Il vero problema
             </h2>
-            <p>
+            <div>
               Molte persone pensano che basti “mangiare sano”.
               <br />
               In realtà, quando ti alleni, il tuo corpo ha <strong>esigenze specifiche.</strong>
@@ -147,20 +150,20 @@ const IndexPage = () => {
                 </li>
               </ul>
               Il punto non è solo cosa mangi, ma come alimentazione, metabolismo e allenamento lavorano insieme.
-            </p>
+            </div>
           </div>
         </section>
 
         <section className="spotlight">
           <div className="image">
-            <img src={pic3.src} alt="" />
+            <img src={pic3.src} srcSet={`${pic3_small.src} ${pic3_small.width}w, ${pic3.src} ${pic3.width}w`} sizes="(max-width: 736px) 100vw, 45vw" width={pic3.width} height={pic3.height} loading="lazy" decoding="async" alt="" />
           </div>
           <div className="content">
             <h2>
               Percorso nutrizionale personalizzato
             </h2>
-            <p>
-              Non una dieta standard ma un piano costruito su abitudini, obiettivi e stile di vita per ottenere risultati <strong>concreti e sostenibili</strong>.
+            <div>
+              Non una dieta standard ma un piano costruito su abitudini, obiettivi e stile di vita da adattare e monitorare nel tempo.
               <br />
               <br />
               <p>
@@ -169,21 +172,21 @@ const IndexPage = () => {
               <p>
                 <strong>Se non fai sport</strong>, potrai avere un percorso per migliorare energia, equilibrio e rapporto con il cibo.
               </p>
-            </p>
+            </div>
           </div>
         </section>
 
 
         <section className="spotlight">
           <div className="image">
-            <img src={bodybuilders.src} alt="" />
+            <img src={bodybuilders.src} srcSet={`${bodybuilders_small.src} ${bodybuilders_small.width}w, ${bodybuilders.src} ${bodybuilders.width}w`} sizes="(max-width: 736px) 100vw, 45vw" width={bodybuilders.width} height={bodybuilders.height} loading="lazy" decoding="async" alt="" />
           </div>
           <div className="content">
             <h2>
-              Risultati che puoi ottenere
+              Obiettivi del percorso
             </h2>
-            <p>
-              Con un approccio corretto puoi ottenere:
+            <div>
+              Il percorso può lavorare su:
               <br />
               <br />
               <ul>
@@ -191,7 +194,7 @@ const IndexPage = () => {
                   più energia durante gli allenamenti
                 </li>
                 <li>
-                  recupero più rapido
+                  supporto al recupero
                 </li>
                 <li>
                   miglior composizione corporea
@@ -203,7 +206,7 @@ const IndexPage = () => {
                   maggiore consapevolezza alimentare
                 </li>
               </ul>
-            </p>
+            </div>
           </div>
         </section>
       </section>
@@ -229,21 +232,15 @@ const IndexPage = () => {
           </ul>
           <ul className="features">
             <li className="icon solid fa-not-equal full-width">
-              <h3>Perchè questo approccio è diverso</h3>
+              <h3>Perché questo approccio è diverso</h3>
               <strong>Non lavoro con schemi standard.</strong><br /><br />
               Integro:<br />
-              - Nutrizione scientifica avanzata<br />
+              - Approccio basato sulle evidenze scientifiche<br />
               - Esperienza nell'allenamento<br />
               - Aggiornamento continuo<br />
               <br />
               Non ti do una dieta.<br />
               <strong>Ti do una strategia costruita sul tuo corpo e sul tuo obiettivo.</strong><br />
-            </li>
-          </ul>
-          <ul className="features">
-            <li className="icon solid fa-hourglass-end full-width">
-              <h3>Disponibilità limitata</h3>
-              <strong>Per garantire qualità e attenzione, seguo un numero limitato di persone ogni mese.</strong>
             </li>
           </ul>
           <Scroll type="id" element="cta">
@@ -254,14 +251,14 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section id="three" className="wrapper style3 special">
+      <section id="servizi" className="wrapper style3 special">
         <div className="inner">
           <header className="major">
             <h2>Come posso aiutarti</h2>
           </header>
           <ul className="features">
             <li className="icon solid fa-weight full-width">
-              <h3>Visita nutrizionale completa</h3>
+              <h3><a href="/prima-visita-nutrizionista-cagliari/">Visita nutrizionale completa</a></h3>
               <p>
                 Anamnesi iniziale, analisi della composizione corporea e valutazione dello stato nutrizionale, piano nutrizionale <strong>personalizzato</strong>, tarato sui tuoi obiettivi.<br />
                 Per soggetti in condizioni fisiologiche o patologiche accertate e per sportivi.<br />
@@ -287,7 +284,7 @@ const IndexPage = () => {
           </ul>
           <ul className="features">
             <li className="icon solid fa-child">
-              <h3>Valutazione composizione corporea</h3>
+              <h3><a href="/valutazione-composizione-corporea-cagliari/">Valutazione composizione corporea</a></h3>
               <p>
                 Valutazione della massa magra e di quella grassa, del BMI (per stabilire lo stato di normopeso, sovrappeso, obesità). Misura delle circonferenze corporee.
               </p>
@@ -308,7 +305,7 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section id="one" className="wrapper style2 special">
+      <section id="conclusione" className="wrapper style2 special">
         <div className="inner">
           <header className="major">
             <p>
@@ -330,6 +327,7 @@ const IndexPage = () => {
         </div>
       </section>
 
+      </main>
     </Layout>)
 }
 

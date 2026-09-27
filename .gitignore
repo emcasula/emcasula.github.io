@@ -8,3 +8,7 @@ yarn.lock
 .astro
 /dist
 .DS_Store
+
+# Local verification notes: never publish supporting professional documents.
+/docs/
+/scripts/

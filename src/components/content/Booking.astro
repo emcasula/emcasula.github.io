@@ -1,0 +1,13 @@
+---
+import { professional } from '../../data/professional.mjs';
+---
+<aside class="booking" aria-label="Prenotazioni">
+  <h2>Parliamone alla prima visita</h2>
+  <p>Per informazioni sul percorso o per scegliere un appuntamento, puoi contattarmi direttamente o consultare l’agenda.</p>
+  <ul class="actions stacked">
+    <li><a class="button primary" href={professional.booking}>Prenota la visita</a></li>
+    <li><a class="button" href={professional.whatsapp}>WhatsApp</a></li>
+    <li><a href={`tel:${professional.phone}`}>Chiama {professional.phoneLabel}</a></li>
+  </ul>
+  <p class="small-note">I canali esterni hanno proprie informative. Leggi anche la <a href="/Privacy/">privacy del sito</a>.</p>
+</aside>

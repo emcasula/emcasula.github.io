@@ -28,7 +28,7 @@
     "clean": "rimraf .astro dist",
     "format": "prettier --write '**/*.{astro,js,jsx,mjs}'",
     "test": "npm run verify",
-    "verify": "npm run check && npm run build && node scripts/verify-build.mjs"
+    "verify": "npm run check && npm run build && node scripts/verify-build.mjs && node scripts/verify-blog.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
@@ -47,5 +47,5 @@
   "bugs": {
     "url": "https://github.com/emcasula/emcasula.github.io/issues"
   },
-  "homepage": "https://nutrizionistaemanuelacasula.it"
+  "homepage": "https://www.nutrizionistaemanuelacasula.it"
 }

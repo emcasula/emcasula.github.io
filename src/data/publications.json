@@ -1,0 +1,47 @@
+[
+  {
+    "pmid": "36528245",
+    "title": "Probiotic lactobacilli attenuate oxysterols-induced alteration of intestinal epithelial cell monolayer permeability: Focus on tight junction modulation",
+    "authors": "Casula E, Pisano MB, Serreli G, Zodio S, Melis MP, Corona G, Costabile A, Cosentino S, Deiana M.",
+    "doi": "10.1016/j.fct.2022.113558",
+    "year": "2023",
+    "journal": "Food and chemical toxicology",
+    "summary": "Studio su un modello cellulare della barriera intestinale e sulla risposta a specifici lattobacilli. I risultati in vitro non equivalgono a una dimostrazione di efficacia clinica nel paziente."
+  },
+  {
+    "pmid": "35745166",
+    "title": "Gut Microbiota Markers and Dietary Habits Associated with Extreme Longevity in Healthy Sardinian Centenarians",
+    "authors": "Palmas V, Pisanu S, Madau V, Casula E, Deledda A, Cusano R, Uva P, Loviselli A, Velluzzi F, Manzin A.",
+    "doi": "10.3390/nu14122436",
+    "year": "2022",
+    "journal": "Nutrients",
+    "summary": "Studio osservazionale su microbiota e abitudini in persone longeve della Sardegna. Le associazioni rilevate non dimostrano che un singolo alimento o batterio causi la longevità."
+  },
+  {
+    "pmid": "33750881",
+    "title": "Gut microbiota markers associated with obesity and overweight in Italian adults",
+    "authors": "Palmas V, Pisanu S, Madau V, Casula E, Deledda A, Cusano R, Uva P, Vascellari S, Loviselli A, Manzin A, Velluzzi F.",
+    "doi": "10.1038/s41598-021-84928-w",
+    "year": "2021",
+    "journal": "Scientific reports",
+    "summary": "Confronto del microbiota in adulti con sovrappeso o obesità e controlli normopeso. Il disegno osservazionale descrive associazioni, senza dimostrare un rapporto causale."
+  },
+  {
+    "pmid": "32898597",
+    "title": "Altered paracellular permeability in intestinal cell monolayer challenged with lipopolysaccharide: Modulatory effects of pterostilbene metabolites",
+    "authors": "Serreli G, Melis MP, Zodio S, Naitza MR, Casula E, Peñalver P, Lucas R, Loi R, Morales JC, Deiana M.",
+    "doi": "10.1016/j.fct.2020.111729",
+    "year": "2020",
+    "journal": "Food and chemical toxicology",
+    "summary": "Ricerca in vitro sui metaboliti del pterostilbene e sulla permeabilità di un modello di epitelio intestinale. Non è una sperimentazione di trattamento su pazienti."
+  },
+  {
+    "pmid": "32899756",
+    "title": "Impact of a Moderately Hypocaloric Mediterranean Diet on the Gut Microbiota Composition of Italian Obese Patients",
+    "authors": "Pisanu S, Palmas V, Madau V, Casula E, Deledda A, Cusano R, Uva P, Vascellari S, Boi F, Loviselli A, Manzin A, Velluzzi F.",
+    "doi": "10.3390/nu12092707",
+    "year": "2020",
+    "journal": "Nutrients",
+    "summary": "Studio di un intervento alimentare di tre mesi su un piccolo gruppo di adulti con sovrappeso o obesità, con analisi del microbiota prima e dopo. Il campione e il disegno richiedono cautela nel generalizzare i risultati."
+  }
+]

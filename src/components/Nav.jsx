@@ -1,4 +1,5 @@
 import React from 'react';
+import { services } from '../data/professional.mjs';
 
 export default function Nav() {
   return (
@@ -8,6 +9,9 @@ export default function Nav() {
           <a
             href="#menu"
             className="menuToggle"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Apri menu"
           >
             <span>Menu</span>
           </a>
@@ -19,6 +23,9 @@ export default function Nav() {
               <li>
                 <a href="/ChiSono/">Chi sono</a>
               </li>
+              {services.map(service => <li key={service.href}><a href={service.href}>{service.title}</a></li>)}
+              <li><a href="/prima-visita-nutrizionista-cagliari/">Prima visita</a></li>
+              <li><a href="/pubblicazioni-scientifiche/">Pubblicazioni</a></li>
               <li>
                 <a href="/Blog/">Blog</a>
               </li>
@@ -31,6 +38,7 @@ export default function Nav() {
             </ul>
             <a
               className="close"
+              aria-label="Chiudi menu"
               href="#menu"
             >
               {''}

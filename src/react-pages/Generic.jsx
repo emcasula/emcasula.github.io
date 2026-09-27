@@ -4,9 +4,9 @@ import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout fullMenu>
-    <article id="main">
+    <article id="main" role="main">
       <header>
-        <h2>Generic Page</h2>
+        <h1>Generic Page</h1>
         <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
       </header>
       <section className="wrapper style5">

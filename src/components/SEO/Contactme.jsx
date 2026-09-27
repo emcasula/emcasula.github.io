@@ -1,4 +1,5 @@
 import React from 'react';
+import { professional } from '../../data/professional.mjs';
 
 const ContactMe = () => {
     return (
@@ -6,17 +7,17 @@ const ContactMe = () => {
             <div className="row gtr-uniform">
                 <div className="col-12">
                     <p>
-                        Se vuoi risultati concreti e un approccio davvero personalizzato, chiedi informazioni o prenota tramite MioDottore o WhatsApp.
+                        Per informazioni sul percorso nutrizionale o per prenotare una visita, contattami tramite MioDottore o WhatsApp.
                     </p>
                 </div>
 
-                <div className="col-12 col-6-medium">
+                <div className="col-12 col-6-medium col-12-small">
                     <ul className="actions stacked">
                         <li>
                             <a
                                 id="zl-url"
                                 className="zl-url button primary fit"
-                                href="https://www.miodottore.it/emanuela-casula/nutrizionista-dietista/cagliari"
+                                href={professional.booking}
                                 rel="nofollow"
                                 data-zlw-doctor="emanuela-casula"
                                 data-zlw-type="big_with_calendar"
@@ -31,7 +32,7 @@ const ContactMe = () => {
                     </ul>
                 </div>
 
-                <div className="col-12 col-6-medium">
+                <div className="col-12 col-6-medium col-12-small">
                     <ul className="actions stacked">
                         <li>
                             <a

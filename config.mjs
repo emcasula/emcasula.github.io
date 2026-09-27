@@ -16,9 +16,8 @@ export default {
   titleAlt: 'Nutrizionista Emanuela Casula', // Title for JSONLD
   description: 'Biologa Nutrizionista a Cagliari, anche online. Nutrizione sportiva e ricomposizione corporea',
   headline: 'Biologa Nutrizionista a Cagliari, anche online.', // Headline for schema.org JSONLD
-  url: 'https://nutrizionistaemanuelacasula.it', // Domain of your site. No trailing slash!
+  url: 'https://www.nutrizionistaemanuelacasula.it', // Domain of your site. No trailing slash!
   siteLanguage: 'it', // Language Tag on <html> element
-  logo: '/logos/logo-1024.png', // Used for SEO
   facebook: 'nutrizionistaemanuelacasula',
   ogLanguage: 'it_IT', // Facebook Language
   // social

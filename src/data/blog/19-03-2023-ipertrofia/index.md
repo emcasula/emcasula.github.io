@@ -1,78 +1,39 @@
 ---
 path: "/ipertrofia-muscolare/"
 date: 2023-03-19T17:12:33.962Z
-title: "Ipertrofia Muscolare, scopriamola"
-cover: '/cover.jpg'
+dateModified: 2026-09-27T10:00:00+02:00
+title: "Ipertrofia muscolare: allenamento e alimentazione"
+description: "Che cosa sostiene la crescita muscolare: allenamento contro resistenza, energia, proteine e recupero, con fonti scientifiche e aspettative individuali."
 ---
 
+L’ipertrofia muscolare è l’aumento delle dimensioni del muscolo. È un adattamento che si costruisce nel tempo: allenamento, alimentazione e caratteristiche individuali concorrono al risultato. Facciamo un po’ di chiarezza, senza ridurre tutto a un alimento o a un integratore.
 
-Ipertrofia muscolare: un argomento di cui tanto si parla in ambito sportivo e nutrizionale. 
-<br/>
-Tanti si pongono il suo raggiungimento come obiettivo tentando approcci più o meno efficaci per raggiungerlo.
-<br/>
-Ma facciamo un po' di chiarezza. 
-<br/>
-<br/>
-Innanzitutto, <strong>cos’è l’ipertrofia muscolare? </strong>
-<br/>
-<br/>
-Si tratta dell’aumento e della crescita delle fibre che compongono il nostro muscolo.
-<br/>
-Tale crescita è influenzata da numerosissimi fattori, sia intrinseci (ovvero che riguardano il singolo individuo) tra cui età e sesso, sia estrinseci tra cui il tipo di allenamento e di tensione a cui il muscolo è sottoposto ed il conseguente ‘danno’ muscolare, il volume e l’intensità degli esercizi e lo stress metabolico.
-<br/>
-<br/>
-Non solo; la crescita del muscolo è certamente legata all’allenamento, ma per poter avvenire nella maniera corretta (e desiderata) richiede il supporto anche di una <strong>corretta alimentazione. </strong>
-<br/>
-Infatti, tra i parametri che influenzano l’ipertrofia vanno a pieno titolo inseriti anche quelli legati alla dieta, ed in particolare un corretto <strong>bilanciamento energetico</strong> ed un apporto adatto di proteine, carboidrati e grassi, sia in termini di quantità che, eventualmente, di timing. 
-<br/>
-<br/>
-Semplificando un discorso che sarebbe più dettagliato e complesso, possiamo dire che le proteine sono i mattoncini che compongono il muscolo, i carboidrati sono il carburante perché la costruzione possa avvenire.
-<br/>
-<br/>
-Ma quindi <strong>cosa possiamo fare per creare quella tanto desiderata ipertrofia?</strong>
-<br/>
-<br/>
-Gli studi riportano che per stimolare l’ipertrofia è necessario che coesistano tre fattori: 
-<ul>
-    <li>stress muscolare</li>
-    <li>danno muscolare</li>
-    <li>tensione meccanica.</li>
-</ul>
+## Lo stimolo dell’allenamento
 
-Quando infatti ci sono questi elementi stiamo dando alle nostre cellule uno stimolo che attiva dei pathways al loro interno che portano all’aumento della sintesi proteica, che poi è ciò che serve per la crescita del muscolo. 
-<br/>
-In particolare, l’allenamento contro resistenza è in grado di produrre tutti e tre questi fattori, aiutandoci nella costruzione di massa muscolare. 
-<br/>
-<br/>
-<strong>Ma attenzione!</strong> 
-<br/>
-<br/>
-Non basta andare in palestra e prendere in mano dei pesi per ottenere i risultati sperati. 
-<br/>
-Come infatti abbiamo detto poco sopra, l’ipertrofia dipende dall’allenamento ed anche da fattori individuali. 
-<br/>
-Dunque possiamo dedurre che perché l’allenamento sia efficace <strong>è necessario che intensità e volumi siano tarati sulla base delle esigenze della persona.</strong>
-<br/>
-<br/>
-La stessa cosa possiamo dirla per ciò che riguarda <strong>l’alimentazione dello sportivo. </strong>
-<br/>
-<br/>
-Come dicevamo, se è vero che con l’allenamento attiviamo i pathways della sintesi proteica, ma se la cellula non ha i mattoncini ed il carburante per costruire il muscolo, il risultato non sarà facilmente raggiungibile.
-<br/>
-<br/>
-Quindi come sempre, il consiglio è di non fare a caso ma di <strong>rivolgersi sempre a professionisti</strong> del settore che possano creare per te una scheda di allenamento adatta alle tue specificità e obiettivi ed un piano alimentare abbinato.
-<br/>
-<br/>
-<strong>Se vuoi aumentare la tua massa muscolare e abbinare un piano nutrizionale adatto alla tua scheda di allenamento, con cui potrai raggiungere gli obiettivi tanto attesi contattami!</strong>
-<br/>
-<br/>
-<br/>
-Dott.ssa Emanuela Casula
-<br/>
-Biologa nutrizionista – NUTRIZIONE CLINICA E SPORTIVA
-<br/>
-351 51 59 912
+L’allenamento contro resistenza è uno strumento per sviluppare la muscolatura. Il [position stand ACSM del 2026](https://pubmed.ncbi.nlm.nih.gov/41843416/) conferma i benefici del lavoro progressivo e l’importanza di adeguare il programma all’obiettivo. Frequenza, volume e carico vanno interpretati insieme alla capacità di sostenere il lavoro, non scelti copiando il programma di un’altra persona.
 
+## Il dolore non misura la crescita
 
+Il dolore dopo una seduta non è una condizione necessaria per far crescere il muscolo. La [revisione di Damas e colleghi](https://pubmed.ncbi.nlm.nih.gov/29282529/) distingue il lavoro di riparazione del danno dagli adattamenti che portano all’ipertrofia. Per questo non è corretto presentare danno muscolare, stress metabolico e tensione come tre requisiti che debbano sempre coesistere. Cercare di sentirsi sempre indolenziti non è un criterio affidabile per valutare il programma.
 
+## Energia e proteine nel contesto della giornata
 
+L’alimentazione deve sostenere il lavoro e il recupero. Un apporto energetico inadeguato alle richieste dello sport può avere conseguenze sulla salute: è uno dei temi del [consenso IOC sulla carenza energetica relativa nello sport](https://doi.org/10.1136/bjsports-2023-106994).
+
+Le proteine contribuiscono ai processi di adattamento, ma aumentarle senza criterio non equivale ad aumentare il muscolo. La [meta-analisi di Morton e colleghi](https://pubmed.ncbi.nlm.nih.gov/28698222/) valuta il contributo della supplementazione proteica durante l’allenamento contro resistenza negli adulti sani: il risultato va letto in relazione all’apporto complessivo e all’allenamento, non come una promessa individuale.
+
+Anche carboidrati, grassi e liquidi fanno parte del quadro. Quantità, distribuzione dei pasti e tolleranza durante l’attività si valutano nel contesto della persona, come indicato nel [documento su nutrizione e prestazione sportiva](https://pubmed.ncbi.nlm.nih.gov/26920240/). Il solo pasto dopo la palestra non descrive la qualità dell’intera alimentazione.
+
+## Tempi e monitoraggio
+
+Non c’è una scadenza uguale per tutti. Esperienza di allenamento, continuità e situazione di partenza rendono diversi i percorsi. Peso e percentuali stimate non sono prove isolate della crescita muscolare: vanno letti insieme alle condizioni di misura e all’andamento nel tempo.
+
+Se vuoi ragionare su questi aspetti, trovi la descrizione del percorso di [nutrizione sportiva a Cagliari](/nutrizione-sportiva-cagliari/) e della [valutazione della composizione corporea](/valutazione-composizione-corporea-cagliari/).
+
+## Fonti
+
+- Currier BS et al. *Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults*. ACSM Position Stand, 2026. [PubMed](https://pubmed.ncbi.nlm.nih.gov/41843416/).
+- Damas F et al. *The development of skeletal muscle hypertrophy through resistance training: the role of muscle damage and muscle protein synthesis*. 2018. [PubMed](https://pubmed.ncbi.nlm.nih.gov/29282529/).
+- Morton RW et al. Revisione sistematica e meta-analisi su supplementazione proteica e allenamento contro resistenza. 2018. [PubMed](https://pubmed.ncbi.nlm.nih.gov/28698222/).
+- Thomas DT et al. *Nutrition and Athletic Performance*. 2016. [PubMed](https://pubmed.ncbi.nlm.nih.gov/26920240/).
+- Mountjoy M et al. Consenso IOC sulla REDs. 2023. [DOI](https://doi.org/10.1136/bjsports-2023-106994).

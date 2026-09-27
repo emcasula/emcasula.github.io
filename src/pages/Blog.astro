@@ -7,6 +7,6 @@ const edges = getBlogPosts().map(post => ({ node: post }));
 const data = { allMarkdownRemark: { edges } };
 ---
 
-<PageShell>
+<PageShell title="Blog di nutrizione | Emanuela Casula" description="Articoli di Emanuela Casula su nutrizione, allenamento e valutazione della composizione corporea." breadcrumbLabel="Blog">
   <BlogPage data={data} />
 </PageShell>

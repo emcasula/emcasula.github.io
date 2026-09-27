@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-sitemap: https://nutrizionistaemanuelacasula.it/sitemap.xml
+sitemap: https://www.nutrizionistaemanuelacasula.it/sitemap-index.xml

@@ -1,0 +1,14 @@
+---
+import PageShell from './PageShell.astro';
+import Layout from '../components/Layout.jsx';
+interface Props { title: string; description: string; heading: string; label?: string; intro?: string; }
+const {title, description, heading, label = heading, intro} = Astro.props;
+---
+<PageShell title={title} description={description} breadcrumbLabel={label}>
+  <Layout fullMenu>
+    <main id="main">
+      <header><h1>{heading}</h1>{intro && <p>{intro}</p>}</header>
+      <div class="wrapper style5"><div class="inner"><slot /></div></div>
+    </main>
+  </Layout>
+</PageShell>

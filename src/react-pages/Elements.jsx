@@ -9,9 +9,9 @@ import pic4 from '../assets/images/pic04.jpg';
 import pic5 from '../assets/images/pic05.jpg';
 import banner from '../assets/images/banner.jpg';
 const IndexPage = () => <Layout>
-	<article id="main">
+	<article id="main" role="main">
 		<header>
-			<h2>Elements</h2>
+			<h1>Elements</h1>
 			<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
 		</header>
 		<section className="wrapper style5">
