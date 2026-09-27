@@ -22,7 +22,7 @@
     "dev": "astro dev",
     "build": "npm run clean && astro build",
     "check": "astro check",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages --nojekyll -d dist",
     "serve": "astro preview",
     "preview": "astro preview",
     "clean": "rimraf .astro dist",
