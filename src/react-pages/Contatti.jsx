@@ -18,9 +18,8 @@ const IndexPage = () => (
           <p><a href={professional.map}>Apri le indicazioni per raggiungere lo studio</a></p>
           <h2>Prenotazioni e informazioni</h2>
           <p>
-            Puoi prenotare o semplicemente chiedere informazioni su un percorso nutrizionale su misura per te al numero <a href="tel:+393515159912">351 515 9912</a> o se preferisci, su <a href="https://wa.me/393515159912">WhatsApp cliccando qui</a>
+            Puoi prenotare o chiedere informazioni al numero <a href="tel:+393515159912">351 515 9912</a>, su <a href="https://wa.me/393515159912">WhatsApp</a> o tramite <a href="https://www.miodottore.it/profilo/emanuela-casula" rel="nofollow">MioDottore</a>. Prima di prenotare, puoi leggere <a href="/prima-visita-nutrizionista-cagliari/">come si svolge la prima visita</a>. Durata, costo e modalità sono indicati nella prestazione selezionata nell’agenda.
           </p>
-          <p>Prima di prenotare, puoi leggere <a href="/prima-visita-nutrizionista-cagliari/">come si svolge la prima visita</a>. Per durata, costo, eventuali consulenze online e modalità di ricevimento, contattami o consulta la prestazione nell’agenda.</p>
           <ContactMe/>
         </div>
       </section>

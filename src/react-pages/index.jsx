@@ -191,10 +191,7 @@ const IndexPage = () => {
               <br />
               <ul>
                 <li>
-                  più energia durante gli allenamenti
-                </li>
-                <li>
-                  supporto al recupero
+                  più energia e un recupero più rapido negli allenamenti
                 </li>
                 <li>
                   miglior composizione corporea

@@ -1173,6 +1173,11 @@
 
 					p {
 						color: functions.palette($p, fg);
+
+						/* Contrast fix (approved): white instead of light mix on style1 teal background. */
+						@if $p == accent1 {
+							color: functions.palette($p, fg-bold);
+						}
 					}
 				}
 			}
@@ -1397,7 +1402,7 @@
 		@include vendor.vendor('transform', 'translateX(20em)');
 		@include vendor.vendor('transition', 'transform #{functions.duration(menu)} ease');
 		-webkit-overflow-scrolling: touch;
-		background: functions.palette(accent1, bg);
+		background: vars.$menu-bg;
 		color: functions.palette(accent1, fg-bold);
 		height: 100%;
 		max-width: 80%;
@@ -1848,7 +1853,8 @@
 			font-size: 1.25em;
 
 			a {
-				color: functions.palette(fg-light);
+				/* Contrast fix (approved): 0.9 alpha for AA on footer background. */
+				color: rgba(255,255,255,0.9);
 
 				&:hover {
 					color: functions.palette(fg);
@@ -1857,7 +1863,8 @@
 		}
 
 		.copyright {
-			color: functions.palette(fg-light);
+			/* Contrast fix (approved): 0.9 alpha for AA on footer background. */
+			color: rgba(255,255,255,0.9);
 			font-size: 0.8em;
 			letter-spacing: functions.size(letter-spacing-alt);
 			list-style: none;
@@ -1865,7 +1872,8 @@
 			text-transform: uppercase;
 
 			li {
-				border-left: solid 1px functions.palette(fg-light);
+				/* Separator aligned with approved copyright contrast fix. */
+				border-left: solid 1px rgba(255,255,255,0.9);
 				display: inline-block;
 				line-height: 1em;
 				margin-left: 1em;

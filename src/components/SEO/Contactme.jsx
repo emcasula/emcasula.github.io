@@ -7,7 +7,7 @@ const ContactMe = () => {
             <div className="row gtr-uniform">
                 <div className="col-12">
                     <p>
-                        Per informazioni sul percorso nutrizionale o per prenotare una visita, contattami tramite MioDottore o WhatsApp.
+                        Se vuoi risultati concreti e un approccio davvero personalizzato, prenota tramite MioDottore o WhatsApp.
                     </p>
                 </div>
 

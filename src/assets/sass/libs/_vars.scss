@@ -30,6 +30,9 @@
 		weight-extrabold:	800
 	);
 
+// Menu panel: darker variant of accent1 teal for AA text contrast (approved).
+$menu-bg:				#1F7A6F;
+
 // Palette.
 	$palette: (
 		bg:					#457B9D,
@@ -97,10 +100,10 @@
 		),
 
 		accent6: (
-			bg:				#ed4933,
+			bg:				#c93a22,
 			fg-bold:		#ffffff,
-			fg:				color.mix(#ed4933, #ffffff, 25%),
-			fg-light:		color.mix(#ed4933, #ffffff, 40%),
+			fg:				color.mix(#c93a22, #ffffff, 25%),
+			fg-light:		color.mix(#c93a22, #ffffff, 40%),
 			border:			rgba(0,0,0,0.125),
 			border-bg:		rgba(255,255,255,0.075),
 			border2:		rgba(0,0,0,0.25),
