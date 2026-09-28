@@ -52,7 +52,11 @@ Il frontmatter degli articoli supporta:
 - `description`: descrizione editoriale facoltativa; in assenza viene usato l’excerpt.
 - `date`: data originale di pubblicazione, obbligatoria per gli articoli pubblicati.
 - `dateModified`: data ISO facoltativa di una revisione sostanziale; non aggiornarla per una semplice build.
-- `cover`: percorso assoluto di un file in `public/`; se manca o non esiste viene usato il ritratto predefinito.
+- `cover`: obbligatoria, percorso relativo alla cover accanto al Markdown, ad esempio `./cover.webp`; validata con `image()` di Astro e ottimizzata con `<Image />` nelle card.
+- `coverAlt`: obbligatorio e descrittivo per fotografie editoriali.
+- `coverDecorative: true`: eccezione temporanea per la grafica decorativa esistente di Bodimage e delle bozze, richiede `coverAlt: ""` e conserva la resa del fallback approvato. Per una fotografia dedicata, omettere il flag e scrivere un alt descrittivo.
+
+Ogni cartella in `src/data/blog/` contiene `index.md` e la cover dichiarata. Anche le bozze devono avere file e metadati immagine validi. Non rinominare cartelle/ID o il campo `path` per aggiungere immagini. Non servono mapping globali, MDX o varianti responsive create manualmente. L’immagine social delle pagine articolo resta il ritratto predefinito, separato dalla cover delle card.
 
 Le bozze sono escluse dal sito, ma i loro sorgenti rimangono leggibili se il repository è pubblico. Non inserire certificati, documenti riservati o dati personali nei file versionati.
 

@@ -1,4 +1,8 @@
 ---
+cover: "./cover.webp"
+coverAlt: ""
+coverDecorative: true
+category: "Antropometria"
 relatedServices: ["valutazione-composizione-corporea-cagliari"]
 path: "/bodimage-per-visite-nutrizionali-online-cosa-e/"
 date: 2021-01-10T17:12:33.962Z

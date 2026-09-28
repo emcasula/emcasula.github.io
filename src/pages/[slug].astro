@@ -1,7 +1,5 @@
 ---
 import { render } from 'astro:content';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
 import config from '../../config.mjs';
 import PageShell from '../layouts/PageShell.astro';
 import { getPublishedContent, formatDate, excerpt, serviceUrl } from '../lib/content';
@@ -14,10 +12,9 @@ export async function getStaticPaths() {
 const { post, related } = Astro.props;
 const { Content } = await render(post);
 const { data } = post;
-const cover = data.cover?.startsWith('/') && !data.cover.startsWith('//') && existsSync(join(process.cwd(), 'public', data.cover)) ? data.cover : undefined;
 ---
 <PageShell title={`${data.title} | ${config.titleAlt}`} description={data.description || excerpt(post.rendered?.html ?? '')}
- breadcrumbLabel={data.title} banner={cover} datePublished={data.date!.toISOString()} dateModified={data.dateModified?.toISOString()} article>
+ breadcrumbLabel={data.title} datePublished={data.date!.toISOString()} dateModified={data.dateModified?.toISOString()} article>
  <article id="main" role="main">
   <header><h1>{data.title}</h1>
    <p><a href="/ChiSono/">Emanuela Casula — Biologa Nutrizionista</a></p>

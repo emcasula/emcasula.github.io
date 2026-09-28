@@ -1,4 +1,7 @@
 ---
+category: "Nutrizione sportiva"
+cover: "./cover.webp"
+coverAlt: "Due persone si allenano con i manubri in palestra"
 relatedServices: ["nutrizione-sportiva-cagliari", "ricomposizione-corporea-cagliari"]
 path: "/ipertrofia-muscolare/"
 date: 2023-03-19T17:12:33.962Z

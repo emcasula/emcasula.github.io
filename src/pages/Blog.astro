@@ -1,6 +1,7 @@
 ---
+import BlogCard from '../components/BlogCard.astro';
 import PageShell from '../layouts/PageShell.astro';
-import { getPublishedContent, formatDate, excerpt } from '../lib/content';
+import { getPublishedContent } from '../lib/content';
 const { posts } = await getPublishedContent();
 ---
 <PageShell title="Blog di nutrizione | Emanuela Casula" description="Articoli di Emanuela Casula su nutrizione, allenamento e valutazione della composizione corporea." breadcrumbLabel="Blog">
@@ -8,12 +9,15 @@ const { posts } = await getPublishedContent();
     <header><h1>Blog</h1></header>
     <section class="wrapper style5"><div class="inner">
       {posts.length === 0 && <p>Non ci sono ancora articoli pubblicati.</p>}
-      {posts.map((post, index) => <div class="blog-post-preview">
-        <h2><a href={post.data.path}>{post.data.title}</a></h2>
-        <p>{formatDate(post.data.date!)}</p>
-        <p>{excerpt(post.rendered?.html ?? '')}</p>
-        {index < posts.length - 1 && <hr />}
-      </div>)}
+      <div class="blog-grid">
+        {posts.map((post, index) => <BlogCard post={post} eager={index === 0} />)}
+      </div>
     </div></section>
   </article>
 </PageShell>
+
+<style>
+  .blog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2em; }
+  @media (min-width: 1281px) { .blog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 736px) { .blog-grid { grid-template-columns: 1fr; } }
+</style>

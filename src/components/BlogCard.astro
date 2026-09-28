@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../lib/content';
+interface Props { post: CollectionEntry<'blog'>; eager?: boolean; }
+const { post: { data }, eager = false } = Astro.props;
+---
+<article class="blog-card">
+  <a href={data.path}>
+    <figure class:list={{ fallback: data.coverDecorative }}>
+      {!data.coverDecorative ? <Image src={data.cover} alt={data.coverAlt}
+        width={640} height={400} widths={[320, 480, 640, 960]}
+        sizes="(max-width: 736px) 90vw, (max-width: 1280px) 43vw, 300px"
+        fit="cover" format="webp" loading={eager ? 'eager' : 'lazy'} />
+        : <Image src={data.cover} alt={data.coverAlt} width={160} height={160} format="webp" loading="lazy" />}
+    </figure>
+    <div class="body">
+      <div class="meta"><span class="category">{data.category}</span>
+        <time datetime={data.date!.toISOString()}>{formatDate(data.date!)}</time>
+      </div>
+      <h2>{data.title}</h2>
+      {data.description && <p>{data.description}</p>}
+      <span class="cta">Leggi l’articolo <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>
+<style lang="scss">
+  @use '../assets/sass/libs/functions';
+  .blog-card { display: flex; min-width: 0; }
+  .blog-card > a { display: flex; flex-direction: column; width: 100%; color: inherit; border: 1px solid functions.palette(accent7, border); }
+  .blog-card > a:hover { border-color: functions.palette(accent7, fg-bold); }
+  .blog-card > a:focus-visible { outline: 2px solid functions.palette(accent7, fg-bold); outline-offset: 4px; }
+  figure { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; }
+  figure img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  figure.fallback { display: grid; place-items: center; background: functions.palette(accent7, border-bg); }
+  figure.fallback img { width: 30%; height: auto; object-fit: contain; }
+  .body { display: flex; flex-direction: column; flex: 1; padding: 1.5em; }
+  .meta { margin-bottom: 1em; font-size: 0.75em; line-height: 1.8; }
+  .category { display: block; text-transform: uppercase; font-weight: 600; }
+  h2 { text-transform: none; letter-spacing: functions.size(letter-spacing); font-size: 1.2em; line-height: 1.55; }
+  p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; margin-bottom: 1.5em; }
+  .cta { align-self: flex-start; margin-top: auto; border-bottom: 1px dotted currentColor; }
+  a:hover .cta, a:focus-visible .cta { border-bottom-style: solid; }
+</style>

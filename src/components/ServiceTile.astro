@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { serviceUrl } from '../lib/content';
+interface Props { service: CollectionEntry<'services'>; }
+const { service: { id, data } } = Astro.props;
+---
+<article class="service-tile">
+  <a href={serviceUrl(id)}>
+    <h2>{data.title}</h2>
+    <p>{data.description}</p>
+    <span class="cta">{data.cta ?? 'Approfondisci'} <span aria-hidden="true">→</span></span>
+  </a>
+</article>
+<style lang="scss">
+  @use '../assets/sass/libs/functions';
+  .service-tile { display: flex; min-width: 0; }
+  .service-tile > a {
+    display: flex; flex-direction: column; width: 100%; padding: 2em;
+    border: 1px solid functions.palette(accent7, border); color: inherit;
+  }
+  .service-tile > a:hover { border-color: functions.palette(accent7, fg-bold); }
+  .service-tile > a:focus-visible { outline: 2px solid functions.palette(accent7, fg-bold); outline-offset: 4px; }
+  h2 { overflow-wrap: normal; }
+  p { margin-bottom: 1.5em; }
+  .cta { align-self: flex-start; margin-top: auto; border-bottom: 1px dotted currentColor; }
+  a:hover .cta, a:focus-visible .cta { border-bottom-style: solid; }
+  @media (max-width: 736px) { .service-tile > a { padding: 1.5em; } }
+</style>

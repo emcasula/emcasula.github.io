@@ -1,4 +1,8 @@
 ---
+cover: "./cover.webp"
+coverAlt: ""
+coverDecorative: true
+category: "Ricomposizione corporea"
 relatedServices: ["nutrizione-sportiva-cagliari", "ricomposizione-corporea-cagliari"]
 path: "/ricomposizione-corporea-peso/"
 draft: true

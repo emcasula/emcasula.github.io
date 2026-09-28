@@ -14,9 +14,10 @@ try {
   writeFileSync(draftFile,JSON.stringify({...service,title:'Servizio bozza fixture',draft:true}));
   const postDir = join(sandbox,'src/data/blog/relation-fixture'); mkdirSync(postDir);
   const postFile = join(postDir,'index.md');
-  writeFileSync(postFile,'---\npath: /relation-fixture/\ntitle: Relazione bozza\ndate: 2020-01-01\nrelatedServices: [fixture-draft]\n---\nTest.');
+  writeFileSync(postFile,'---\npath: /relation-fixture/\ntitle: Relazione bozza\ndate: 2020-01-01\nrelatedServices: [fixture-draft]\ncover: ./cover.webp\ncoverAlt: Test cover\n---\nTest.');
   const draftPostDir = join(sandbox,'src/data/blog/related-draft'); mkdirSync(draftPostDir);
-  writeFileSync(join(draftPostDir,'index.md'),'---\npath: /related-draft/\ntitle: Articolo bozza fixture\ndraft: true\n---\nTest.');
+  writeFileSync(join(draftPostDir,'index.md'),'---\npath: /related-draft/\ntitle: Articolo bozza fixture\ndraft: true\ncover: ./cover.webp\ncoverAlt: Test cover\n---\nTest.');
+  for (const dir of [postDir, draftPostDir]) cpSync(join(root,'src/data/blog/10-01-2021-bodimage/cover.webp'),join(dir,'cover.webp'));
   writeFileSync(serviceFile,JSON.stringify({...service,relatedArticles:['related-draft']}));
   const build = () => {
     rmSync(join(sandbox,'dist'),{recursive:true,force:true});
@@ -33,6 +34,17 @@ try {
     assert(error,'Build accepted invalid content');
     assert.match(`${error.stdout}\n${error.stderr}`,pattern);
   };
+  const originalPost = readFileSync(postFile, 'utf8');
+  for (const [invalid, pattern] of [
+    [originalPost.replace('cover: ./cover.webp\n', ''), /cover/],
+    [originalPost.replace('./cover.webp', './missing-cover.webp'), /missing-cover/],
+    [originalPost.replace('coverAlt: Test cover\n', ''), /coverAlt/],
+    [originalPost.replace('coverAlt: Test cover', 'coverAlt: ""'), /coverAlt/],
+  ]) {
+    writeFileSync(postFile, invalid);
+    expectFailure(pattern);
+  }
+  writeFileSync(postFile, originalPost);
   const {title,...withoutTitle} = service;
   writeFileSync(serviceFile,JSON.stringify(withoutTitle));
   expectFailure(/title/);
@@ -41,6 +53,7 @@ try {
   writeFileSync(serviceFile,JSON.stringify(service));
   const duplicate = join(sandbox,'src/data/blog/duplicate-fixture'); mkdirSync(duplicate);
   cpSync(postFile,join(duplicate,'index.md'));
+  cpSync(join(postDir,'cover.webp'),join(duplicate,'cover.webp'));
   expectFailure(/URL blog duplicato/);
   console.log('Content Collections: draft servizi/articoli esclusi anche dai correlati; schema, riferimenti e URL duplicati verificati.');
 } finally { rmSync(sandbox,{recursive:true,force:true}); }

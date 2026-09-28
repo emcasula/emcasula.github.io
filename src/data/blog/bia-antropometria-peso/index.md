@@ -1,4 +1,8 @@
 ---
+cover: "./cover.webp"
+coverAlt: ""
+coverDecorative: true
+category: "Antropometria"
 relatedServices: ["valutazione-composizione-corporea-cagliari"]
 path: "/bia-antropometria-peso/"
 draft: true

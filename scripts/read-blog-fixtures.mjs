@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';
@@ -11,7 +11,6 @@ const markdown = new MarkdownIt({ html: true });
  * @property {string} path
  * @property {string} date
  * @property {string} title
- * @property {string} [cover]
  * @property {boolean} [draft]
  * @property {string} [description]
  * @property {string} [dateModified]
@@ -27,7 +26,6 @@ const markdown = new MarkdownIt({ html: true });
  * @property {string} [dateModified]
  * @property {string} [modifiedLabel]
  * @property {string} description
- * @property {string} [cover]
  * @property {BlogFrontmatter} frontmatter
  */
 
@@ -73,8 +71,6 @@ export function getBlogPosts(directory = blogDirectory) {
         dateModified: frontmatter.dateModified ? new Date(frontmatter.dateModified).toISOString() : undefined,
         modifiedLabel: frontmatter.dateModified ? formatDate(frontmatter.dateModified) : undefined,
         description: frontmatter.description?.trim() || makeExcerpt(html),
-        cover: frontmatter.cover?.startsWith('/') && !frontmatter.cover.startsWith('//') &&
-          existsSync(join(process.cwd(), 'public', frontmatter.cover)) ? frontmatter.cover : undefined,
         frontmatter: {
           ...frontmatter,
           date: formatDate(frontmatter.date),

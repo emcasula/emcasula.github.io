@@ -14,17 +14,17 @@ try {
   const blog = join(sandbox, 'src/data/blog');
   const draft = join(blog, 'draft-fixture');
   mkdirSync(draft);
-  writeFileSync(join(draft, 'index.md'), '---\npath: /seo-draft-fixture/\ntitle: Draft fixture\ndraft: true\n---\nNever publish this fixture.\n');
+  writeFileSync(join(draft, 'index.md'), '---\npath: /seo-draft-fixture/\ntitle: Draft fixture\ndraft: true\ncover: ./cover.webp\ncoverAlt: Test cover\n---\nNever publish this fixture.\n');
   const published = join(blog, 'published-fixture');
   mkdirSync(published);
-  writeFileSync(join(published, 'index.md'), '---\npath: /seo-published-fixture/\ntitle: Published fixture\ndate: 2020-01-02T12:00:00.000Z\ndateModified: 2024-03-04T12:00:00.000Z\ndescription: Explicit description\ncover: /missing-cover.jpg\n---\nFixture article.\n');
+  writeFileSync(join(published, 'index.md'), '---\npath: /seo-published-fixture/\ntitle: Published fixture\ndate: 2020-01-02T12:00:00.000Z\ndateModified: 2024-03-04T12:00:00.000Z\ndescription: Explicit description\ncover: ./cover.webp\ncoverAlt: Test cover\n---\nFixture article.\n');
+  for (const dir of [draft, published]) cpSync(join(root, 'src/data/blog/10-01-2021-bodimage/cover.webp'), join(dir, 'cover.webp'));
   const posts = getBlogPosts(blog);
   assert(!posts.some(p => p.id === '/seo-draft-fixture/'));
   const post = posts.find(p => p.id === '/seo-published-fixture/');
   assert.equal(post.description, 'Explicit description');
   assert.equal(post.datePublished, '2020-01-02T12:00:00.000Z');
   assert.equal(post.dateModified, '2024-03-04T12:00:00.000Z');
-  assert.equal(post.cover, undefined);
   const build = () => execFileSync(process.execPath, [join(root, 'node_modules/astro/bin/astro.mjs'), 'build'], { cwd: sandbox, stdio: 'pipe', env: { ...process.env, ASTRO_TELEMETRY_DISABLED: '1' } });
   const read = path => readFileSync(join(sandbox, 'dist', path), 'utf8');
   build();
@@ -51,7 +51,7 @@ try {
   assert(read('Blog/index.html').includes('Non ci sono ancora articoli pubblicati.'));
   assert(!read('sitemap-0.xml').includes('seo-draft-fixture'));
   assert(!existsSync(join(sandbox, 'dist/seo-draft-fixture/index.html')));
-  console.log('Blog verificato: bozze escluse, date stabili, revisione esplicita, immagine fallback e lista vuota.');
+  console.log('Blog verificato: bozze escluse, date stabili, revisione esplicita, cover locale e lista vuota.');
 } catch (error) {
   if (error.stdout) console.error(error.stdout.toString());
   if (error.stderr) console.error(error.stderr.toString());
