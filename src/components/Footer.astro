@@ -1,0 +1,27 @@
+---
+import config from '../../config.mjs';
+import { professional } from '../data/professional.mjs';
+---
+    <footer id="footer">
+      <p><strong>Emanuela Casula · Biologa Nutrizionista</strong></p>
+      <address>{professional.address.street}, {professional.address.postalCode} {professional.address.city}</address>
+      <p><a href={`tel:${professional.phone}`}>{professional.phoneLabel}</a> · <a href={professional.map}>Indicazioni</a></p>
+      <nav aria-label="Collegamenti utili"><a href="/servizi/prima-visita-nutrizionista-cagliari/">Prima visita</a> · <a href="/Contatti/">Contatti</a> · <a href="/Privacy/">Privacy</a></nav>
+      <ul class="icons">
+        {config.socialLinks.map(social => {
+          const { style, icon, name, url } = social;
+          return (
+            <li>
+              <a href={url} class={`icon ${style} ${icon}`}>
+                <span class="label">{name}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <ul class="copyright">
+        <li>
+          P.IVA 03935130926
+        </li>
+      </ul>
+    </footer>

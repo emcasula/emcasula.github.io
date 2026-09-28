@@ -1,0 +1,9 @@
+---
+import Nav from './Nav.astro';
+interface Props { fullMenu?: boolean; }
+const { fullMenu = false } = Astro.props;
+---
+<header id="header" class={fullMenu ? '' : 'alt'}>
+  <p class="site-name"><a href="/">Dott.ssa Emanuela Casula</a></p>
+  <div class=" "><Nav /></div>
+</header>

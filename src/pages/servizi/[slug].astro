@@ -1,0 +1,22 @@
+---
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import ContentPage from '../../layouts/ContentPage.astro';
+import { getPublishedContent } from '../../lib/content';
+const bodies = import.meta.glob<AstroComponentFactory>('../../components/services/*.astro', { eager: true, import: 'default' });
+export async function getStaticPaths() {
+  const { services, posts } = await getPublishedContent();
+  return services.map(service => ({ params: { slug: service.id }, props: {
+    service, articles: posts.filter(post => service.data.relatedArticles.some(ref => ref.id === post.id)),
+  } }));
+}
+const { service, articles } = Astro.props;
+const { data } = service;
+const Body = bodies[`../../components/services/${service.id}.astro`];
+if (!Body) throw new Error(`Contenuto servizio mancante: ${service.id}`);
+---
+<ContentPage title={data.seoTitle} description={data.seoDescription} heading={data.heading} label={data.label} intro={data.intro}>
+  <Body />
+  {articles.length > 0 && <nav class="related-reading" aria-label="Approfondimenti correlati"><h2>Per approfondire</h2><ul>
+    {articles.map(post => <li><a href={post.data.path}>{post.data.title}</a></li>)}
+  </ul></nav>}
+</ContentPage>

@@ -1,0 +1,12 @@
+---
+import ContentPage from '../../layouts/ContentPage.astro';
+import { getPublishedContent, serviceUrl } from '../../lib/content';
+const { services } = await getPublishedContent();
+---
+<ContentPage title="Servizi e percorsi nutrizionali a Cagliari | Emanuela Casula" heading="Servizi" label="Servizi"
+  description="Scopri i percorsi di Emanuela Casula a Cagliari: nutrizione sportiva, ricomposizione corporea, valutazione della composizione corporea e prima visita.">
+  {services.map(({id, data}) => <section>
+    <h2><a href={serviceUrl(id)}>{data.title}</a></h2>
+    <p>{data.description}</p>
+  </section>)}
+</ContentPage>

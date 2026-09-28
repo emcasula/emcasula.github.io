@@ -1,0 +1,15 @@
+---
+import '../assets/sass/main.scss';
+import Footer from './Footer.astro';
+import Sidebar from './Sidebar.astro';
+interface Props { fullMenu?: boolean; }
+const {fullMenu = false} = Astro.props;
+---
+<div class="landing main-body is-preload">
+  <div id="page-wrapper">
+    <a class="skip-link" href="#page-content">Vai al contenuto</a>
+    <Sidebar fullMenu={fullMenu} />
+    <div id="page-content" tabindex="-1"><slot /></div>
+    <Footer />
+  </div>
+</div>
