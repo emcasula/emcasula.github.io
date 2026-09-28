@@ -1,4 +1,5 @@
 ---
+relatedServices: ["valutazione-composizione-corporea-cagliari"]
 path: "/bia-antropometria-peso/"
 draft: true
 title: "BIA, antropometria e peso: domande da fare durante la visita"
@@ -17,4 +18,4 @@ Peso, circonferenze, pliche e BIA non sono sinonimi. Quando leggiamo un risultat
 
 La [revisione sull’accordo tra BIA e DXA negli atleti](https://pubmed.ncbi.nlm.nih.gov/36853902/) è un esempio di come la ricerca valuti il confronto tra tecnologie. Un risultato non diventa intercambiabile con un altro soltanto perché entrambi sono espressi in percentuale.
 
-In studio, la lettura dei risultati si inserisce nella [valutazione della composizione corporea](/valutazione-composizione-corporea-cagliari/), con spiegazioni legate al percorso individuale.
+In studio, la lettura dei risultati si inserisce nella [valutazione della composizione corporea](/servizi/valutazione-composizione-corporea-cagliari/), con spiegazioni legate al percorso individuale.

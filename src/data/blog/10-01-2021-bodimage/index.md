@@ -1,4 +1,5 @@
 ---
+relatedServices: ["valutazione-composizione-corporea-cagliari"]
 path: "/bodimage-per-visite-nutrizionali-online-cosa-e/"
 date: 2021-01-10T17:12:33.962Z
 dateModified: 2026-09-27T10:00:00+02:00
@@ -20,7 +21,7 @@ Un esempio del problema è il confronto tra BIA e DXA negli atleti: una [revisio
 
 ## La valutazione oggi in studio
 
-Nello studio utilizzo BIA, plicometria e circonferenze. Nella pagina sulla [valutazione della composizione corporea a Cagliari](/valutazione-composizione-corporea-cagliari/) spiego il ruolo delle misure e i loro limiti. Per sapere quali valutazioni siano pertinenti al tuo caso e come prepararti, puoi [contattarmi](/Contatti/).
+Nello studio utilizzo BIA, plicometria e circonferenze. Nella pagina sulla [valutazione della composizione corporea a Cagliari](/servizi/valutazione-composizione-corporea-cagliari/) spiego il ruolo delle misure e i loro limiti. Per sapere quali valutazioni siano pertinenti al tuo caso e come prepararti, puoi [contattarmi](/Contatti/).
 
 ## Fonte di approfondimento
 

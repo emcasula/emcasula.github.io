@@ -1,4 +1,5 @@
 ---
+relatedServices: ["nutrizione-sportiva-cagliari", "ricomposizione-corporea-cagliari"]
 path: "/ricomposizione-corporea-peso/"
 draft: true
 title: "Ricomposizione corporea: quale ruolo dare al peso?"
@@ -13,4 +14,4 @@ Che cosa mi aspetto dal percorso? Quali abitudini posso sostenere? In che modo v
 
 Le [raccomandazioni IOC sulla composizione corporea nello sport](https://pubmed.ncbi.nlm.nih.gov/37752006/) richiamano l’attenzione sulla salute della persona e sui rischi di attribuire un’importanza eccessiva all’essere più magri. La misura è uno strumento, non il criterio unico per definire come stai.
 
-Scopri il percorso di [ricomposizione corporea](/ricomposizione-corporea-cagliari/) e le informazioni sulla [prima visita](/prima-visita-nutrizionista-cagliari/).
+Scopri il percorso di [ricomposizione corporea](/servizi/ricomposizione-corporea-cagliari/) e le informazioni sulla [prima visita](/servizi/prima-visita-nutrizionista-cagliari/).

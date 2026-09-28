@@ -11,4 +11,8 @@ yarn.lock
 
 # Local verification notes: never publish supporting professional documents.
 /docs/
-/scripts/
+/scripts/*
+!/scripts/verify-build.mjs
+!/scripts/verify-blog.mjs
+!/scripts/verify-content.mjs
+!/scripts/read-blog-fixtures.mjs

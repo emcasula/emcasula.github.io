@@ -1,8 +1,7 @@
 import React from 'react';
-import Layout from '../components/Layout';
 
 const IndexPage = () => (
-  <Layout fullMenu>
+  <>
     <section role="main" id="three" className="wrapper style3 special">
         <div className="inner">
           <header className="major">
@@ -19,7 +18,7 @@ const IndexPage = () => (
           </ul>
         </div>
       </section>
-  </Layout>
+  </>
 );
 
 export default IndexPage;

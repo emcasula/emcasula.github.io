@@ -1,4 +1,5 @@
 ---
+import Layout from '../components/Layout.astro';
 import config from '../../config.mjs';
 import { professional } from '../data/professional.mjs';
 import picture from '../assets/img/nutrizionista-emanuela-casula-cagliari.jpg';
@@ -24,6 +25,7 @@ const personId = `${config.url}/#person`;
 const businessId = `${config.url}/#studio`;
 const websiteId = `${config.url}/#website`;
 const breadcrumbs = [{ name: 'Home', url: `${config.url}/` }];
+if (pathname.startsWith('/servizi/') && pathname !== '/servizi/') breadcrumbs.push({ name: 'Servizi', url: `${config.url}/servizi/` });
 if (article) breadcrumbs.push({ name: 'Blog', url: `${config.url}/Blog/` });
 if (pathname !== '/') breadcrumbs.push({ name: breadcrumbLabel, url });
 const schema = {
@@ -82,7 +84,7 @@ const isProduction = import.meta.env.PROD;
     {breadcrumbs.length > 1 && <nav class="breadcrumbs" aria-label="Percorso di navigazione"><ol>
       {breadcrumbs.map((crumb, index) => <li>{index === breadcrumbs.length - 1 ? <span aria-current="page">{crumb.name}</span> : <a href={crumb.url}>{crumb.name}</a>}</li>)}
     </ol></nav>}
-    <slot />
+    <Layout fullMenu={pathname !== '/'}><slot /></Layout>
     <script is:inline>
       setTimeout(() => {
         document.querySelector('.main-body')?.classList.remove('is-preload');

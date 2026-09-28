@@ -1,22 +1,35 @@
 ---
+import { render } from 'astro:content';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import config from '../../config.mjs';
 import PageShell from '../layouts/PageShell.astro';
-import BlogPost from '../templates/blog-post.jsx';
-import { getBlogPosts } from '../lib/blog.mjs';
-
-export function getStaticPaths() {
-  return getBlogPosts().map(post => ({
-    params: { slug: post.frontmatter.path.replace(/^\/+|\/+$/g, '') },
-    props: { post },
-  }));
+import { getPublishedContent, formatDate, excerpt, serviceUrl } from '../lib/content';
+export async function getStaticPaths() {
+  const { posts, services } = await getPublishedContent();
+  return posts.map(post => ({ params: { slug: post.data.path.replace(/^\/+|\/+$/g, '') }, props: {
+    post, related: services.filter(service => post.data.relatedServices.some(ref => ref.id === service.id)),
+  } }));
 }
-
-const { post } = Astro.props;
-const data = { markdownRemark: post };
+const { post, related } = Astro.props;
+const { Content } = await render(post);
+const { data } = post;
+const cover = data.cover?.startsWith('/') && !data.cover.startsWith('//') && existsSync(join(process.cwd(), 'public', data.cover)) ? data.cover : undefined;
 ---
-
-<PageShell title={`${post.frontmatter.title} | ${config.titleAlt}`}
-  description={post.description} breadcrumbLabel={post.frontmatter.title}
-  banner={post.cover} datePublished={post.datePublished} dateModified={post.dateModified} article>
-  <BlogPost data={data} />
+<PageShell title={`${data.title} | ${config.titleAlt}`} description={data.description || excerpt(post.rendered?.html ?? '')}
+ breadcrumbLabel={data.title} banner={cover} datePublished={data.date!.toISOString()} dateModified={data.dateModified?.toISOString()} article>
+ <article id="main" role="main">
+  <header><h1>{data.title}</h1>
+   <p><a href="/ChiSono/">Emanuela Casula — Biologa Nutrizionista</a></p>
+   <p>Pubblicato il <time datetime={data.date!.toISOString()}>{formatDate(data.date!)}</time></p>
+   {data.dateModified && <p>Ultima revisione: <time datetime={data.dateModified.toISOString()}>{formatDate(data.dateModified)}</time></p>}
+  </header>
+  <section class="wrapper style5"><div class="inner"><div class="blog-post-container"><div class="blog-post">
+   <div class="blog-post-content"><Content /></div>
+   <p class="small-note">Le informazioni hanno finalità divulgativa e non sostituiscono una valutazione professionale individuale.</p>
+   {related.length > 0 && <nav class="related-reading" aria-label="Approfondimenti correlati"><h2>Per approfondire</h2><ul>
+    {related.map(service => <li><a href={serviceUrl(service.id)}>{service.data.title}</a></li>)}
+   </ul></nav>}
+  </div></div></div></section>
+ </article>
 </PageShell>

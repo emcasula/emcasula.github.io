@@ -63,3 +63,20 @@ Le bozze sono escluse dal sito, ma i loro sorgenti rimangono leggibili se il rep
 Il presentation layer usa la baseline Spectral del commit `7170fac`; i nuovi contenuti riutilizzano `wrapper`, `spotlight`, `features` e `actions`. Ulteriori modifiche UI/UX richiedono approvazione esplicita preventiva; non cambiare automaticamente palette o layout per ottimizzazioni SEO. Audit e limiti: `docs/ui-rollback-report.md` e `docs/color-harmony-audit.md`.
 
 I dati condivisi sono in `src/data/professional.mjs`; la selezione bibliografica in `src/data/publications.json`. Stato del lavoro e dati ancora mancanti: `docs/seo-release-report.md`. Nessun deploy automatico è stato eseguito.
+
+## Architettura Servizi e Blog
+
+Il menu principale contiene soltanto Home, Chi sono, Servizi, Blog e Contatti. `/servizi/` elenca i percorsi in ordine esplicito. I quattro servizi preparati prima della pubblicazione ora usano `/servizi/<slug>/`; gli URL storici del Blog e delle pagine istituzionali rimangono invariati.
+
+Le Content Collections sono definite in `src/content.config.ts`:
+
+- `services`: file JSON in `src/data/services/`, con titolo, descrizione breve, metadata, intestazione, ordine, draft e riferimenti agli articoli. Il nome del file è lo slug, senza duplicarlo nei dati. Il corpo Astro corrispondente è in `src/components/services/`.
+- `blog`: Markdown in `src/data/blog/<id>/index.md`, con le date originali e `relatedServices`. L’ID dei riferimenti è il nome della cartella; `path` conserva l’URL pubblico.
+
+Il caricamento e i riferimenti usano le API native Astro. `draft: true` esclude servizi e articoli da route, elenchi, sitemap e correlati. Riferimenti inesistenti e URL blog duplicati bloccano la build. Quando si elimina un contenuto, aggiornare anche i riferimenti; una bozza esistente può essere referenziata ma non viene mostrata. I collegamenti editoriali nel corpo restano da mantenere consapevolmente.
+
+Header, menu, footer, shell, hub e rendering degli articoli sono componenti Astro statici. I componenti React preesistenti delle altre pagine restano renderizzati sul server, senza idratazione. Nessun router client o nuova dipendenza.
+
+Astro 7.3.0 richiede un alias mirato per `astro/_internal/logger`, referenziato dal modulo assets ma assente dagli export del pacchetto installato. È documentato in `astro.config.mjs`; rivalutarlo in occasione di un futuro aggiornamento esplicitamente autorizzato.
+
+`npm run verify` include fixture temporanee per schema, bozze, contenuti correlati, URL duplicati, date stabili e blog vuoto. Gli script necessari alla verifica sono versionabili; i report locali sotto `docs/` restano ignorati da Git.

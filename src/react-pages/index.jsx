@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
 
 import pic3 from '../assets/images/pic03-1200.webp';
@@ -17,7 +16,7 @@ import ContactMe from '../components/SEO/Contactme';
 const IndexPage = () => {
 
   return (
-    <Layout>
+    <>
       <main id="main-content">
       <section id="banner">
         <div className="inner">
@@ -89,7 +88,7 @@ const IndexPage = () => {
               <a href="/ChiSono/">Chi sono</a>
             </h2>
             <p>
-              Sono la dott.ssa Emanuela Casula, biologa nutrizionista. Mi occupo di aiutare le persone a migliorare la propria alimentazione <strong>in modo sostenibile</strong> con un'attenzione particolare alla <strong><a href="/nutrizione-sportiva-cagliari/">nutrizione sportiva</a></strong> e alla <strong><a href="/ricomposizione-corporea-cagliari/">ricomposizione corporea</a></strong>.
+              Sono la dott.ssa Emanuela Casula, biologa nutrizionista. Mi occupo di aiutare le persone a migliorare la propria alimentazione <strong>in modo sostenibile</strong> con un'attenzione particolare alla <strong><a href="/servizi/nutrizione-sportiva-cagliari/">nutrizione sportiva</a></strong> e alla <strong><a href="/servizi/ricomposizione-corporea-cagliari/">ricomposizione corporea</a></strong>.
               <br />
               Nel mio lavoro unisco <strong>approccio scientifico e ascolto empatico</strong>, perché ogni percorso deve essere <strong>efficace</strong> ma anche <strong>realistico</strong> nella vita quotidiana.
             </p>
@@ -255,7 +254,7 @@ const IndexPage = () => {
           </header>
           <ul className="features">
             <li className="icon solid fa-weight full-width">
-              <h3><a href="/prima-visita-nutrizionista-cagliari/">Visita nutrizionale completa</a></h3>
+              <h3><a href="/servizi/prima-visita-nutrizionista-cagliari/">Visita nutrizionale completa</a></h3>
               <p>
                 Anamnesi iniziale, analisi della composizione corporea e valutazione dello stato nutrizionale, piano nutrizionale <strong>personalizzato</strong>, tarato sui tuoi obiettivi.<br />
                 Per soggetti in condizioni fisiologiche o patologiche accertate e per sportivi.<br />
@@ -281,7 +280,7 @@ const IndexPage = () => {
           </ul>
           <ul className="features">
             <li className="icon solid fa-child">
-              <h3><a href="/valutazione-composizione-corporea-cagliari/">Valutazione composizione corporea</a></h3>
+              <h3><a href="/servizi/valutazione-composizione-corporea-cagliari/">Valutazione composizione corporea</a></h3>
               <p>
                 Valutazione della massa magra e di quella grassa, del BMI (per stabilire lo stato di normopeso, sovrappeso, obesità). Misura delle circonferenze corporee.
               </p>
@@ -325,7 +324,7 @@ const IndexPage = () => {
       </section>
 
       </main>
-    </Layout>)
+    </>)
 }
 
 export default IndexPage;

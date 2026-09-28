@@ -1,4 +1,5 @@
 ---
+relatedServices: ["valutazione-composizione-corporea-cagliari"]
 path: "/certificazione-isak-antropometria/"
 draft: true
 title: "ISAK e antropometria: che cosa significa la formazione"
@@ -19,9 +20,9 @@ L’antropometria richiede attenzione ai punti di riferimento e alla tecnica del
 
 ## Antropometria e BIA
 
-Pliche e circonferenze descrivono aspetti dimensionali del corpo; la BIA usa proprietà elettriche per ricavare informazioni e stime. Sono approcci diversi, da interpretare insieme al contesto. Nella pagina sulla [composizione corporea](/valutazione-composizione-corporea-cagliari/) trovi una spiegazione dei metodi utilizzati in studio.
+Pliche e circonferenze descrivono aspetti dimensionali del corpo; la BIA usa proprietà elettriche per ricavare informazioni e stime. Sono approcci diversi, da interpretare insieme al contesto. Nella pagina sulla [composizione corporea](/servizi/valutazione-composizione-corporea-cagliari/) trovi una spiegazione dei metodi utilizzati in studio.
 
-Per conoscere il mio percorso puoi leggere [Chi sono](/ChiSono/); per le applicazioni, le pagine su [nutrizione sportiva](/nutrizione-sportiva-cagliari/) e [ricomposizione corporea](/ricomposizione-corporea-cagliari/).
+Per conoscere il mio percorso puoi leggere [Chi sono](/ChiSono/); per le applicazioni, le pagine su [nutrizione sportiva](/servizi/nutrizione-sportiva-cagliari/) e [ricomposizione corporea](/servizi/ricomposizione-corporea-cagliari/).
 
 ## Fonte
 

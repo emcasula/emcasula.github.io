@@ -1,4 +1,5 @@
 ---
+relatedServices: ["nutrizione-sportiva-cagliari", "ricomposizione-corporea-cagliari"]
 path: "/ipertrofia-muscolare/"
 date: 2023-03-19T17:12:33.962Z
 dateModified: 2026-09-27T10:00:00+02:00
@@ -28,7 +29,7 @@ Anche carboidrati, grassi e liquidi fanno parte del quadro. Quantità, distribuz
 
 Non c’è una scadenza uguale per tutti. Esperienza di allenamento, continuità e situazione di partenza rendono diversi i percorsi. Peso e percentuali stimate non sono prove isolate della crescita muscolare: vanno letti insieme alle condizioni di misura e all’andamento nel tempo.
 
-Se vuoi ragionare su questi aspetti, trovi la descrizione del percorso di [nutrizione sportiva a Cagliari](/nutrizione-sportiva-cagliari/) e della [valutazione della composizione corporea](/valutazione-composizione-corporea-cagliari/).
+Se vuoi ragionare su questi aspetti, trovi la descrizione del percorso di [nutrizione sportiva a Cagliari](/servizi/nutrizione-sportiva-cagliari/) e della [valutazione della composizione corporea](/servizi/valutazione-composizione-corporea-cagliari/).
 
 ## Fonti
 

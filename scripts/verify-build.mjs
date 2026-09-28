@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { getBlogPosts } from '../src/lib/blog.mjs';
+import { getBlogPosts } from './read-blog-fixtures.mjs';
 import config from '../config.mjs';
-import { professional, services } from '../src/data/professional.mjs';
+import { professional } from '../src/data/professional.mjs';
 
+const services = readdirSync('src/data/services').filter(name => name.endsWith('.json')).map(name => ({...JSON.parse(readFileSync(join('src/data/services', name), 'utf8')), href: `/servizi/${name.replace(/\.json$/, '')}/`})).filter(service => !service.draft).sort((a,b) => a.order-b.order);
 const output = join(process.cwd(), 'dist');
-const pages = ['index.html', '404.html', ...['Blog', 'ChiSono', 'Contatti', 'Elements', 'Generic', 'Privacy', 'ThankYou'].map(p => `${p}/index.html`), ...[...services.map(s => s.href), '/prima-visita-nutrizionista-cagliari/', '/pubblicazioni-scientifiche/'].map(p => `${p.replace(/^\/+|\/+$/g, '')}/index.html`), ...getBlogPosts().map(p => `${p.frontmatter.path.replace(/^\/+|\/+$/g, '')}/index.html`)];
+const pages = ['index.html', '404.html', ...['Blog', 'ChiSono', 'Contatti', 'Elements', 'Generic', 'Privacy', 'ThankYou'].map(p => `${p}/index.html`), ...[...services.map(s => s.href), '/servizi/', '/pubblicazioni-scientifiche/'].map(p => `${p.replace(/^\/+|\/+$/g, '')}/index.html`), ...getBlogPosts().map(p => `${p.frontmatter.path.replace(/^\/+|\/+$/g, '')}/index.html`)];
 const read = file => readFileSync(join(output, file), 'utf8');
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(m => attrs(m[0]));
@@ -88,3 +89,21 @@ for (const service of services) assert(home.includes(service.href));
 assert(home.includes('srcSet=') || home.includes('srcset='));
 assert(!home.includes('Disponibilità limitata'));
 assert(read('pubblicazioni-scientifiche/index.html').includes('35745166'));
+
+const hub = read('servizi/index.html');
+for (const service of services) {
+  assert(hub.includes(service.href));
+  assert(!read('Blog/index.html').includes(`<h2><a href="${service.href}"`));
+  assert(!existsSync(join(output, service.href.replace('/servizi/', '/'))));
+  const html = read(`${service.href.slice(1)}index.html`);
+  assert(html.includes(`${config.url}/servizi/`));
+  assert(!html.includes('"@type":"BlogPosting"'));
+}
+for (const file of pages) {
+  const html = read(file);
+  const menu = html.match(/<div id="menu">([\s\S]*?)<\/ul>/)?.[1];
+  assert(menu, `Menu mancante: ${file}`);
+  assert.deepEqual([...menu.matchAll(/href="([^"]*)"/g)].map(m => m[1]), ['/', '/ChiSono/', '/servizi/', '/Blog/', '/Contatti/']);
+  for (const service of services) assert(!html.includes(`href="${service.href.replace('/servizi/', '/')}"`));
+  assert(!html.includes('astro-island'), `Idratazione non prevista: ${file}`);
+}
