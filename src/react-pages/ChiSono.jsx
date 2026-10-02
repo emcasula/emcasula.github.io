@@ -31,7 +31,7 @@ const IndexPage = () => (
 
           <h2>Nutrizione, allenamento e misurazioni</h2>
           <p>Nel mio lavoro mi occupo di <a href="/servizi/nutrizione-sportiva-cagliari/">nutrizione sportiva</a> e <a href="/servizi/ricomposizione-corporea-cagliari/">ricomposizione corporea</a>. La formazione nel personal training mi aiuta a comprendere le esigenze di chi si allena.</p>
-          <p>Per la <a href="/servizi/valutazione-composizione-corporea-cagliari/">valutazione della composizione corporea</a> utilizzo BIA, plicometria e circonferenze. Sto seguendo il percorso ISAK di livello 1: la formazione è in corso e la certificazione non è ancora conseguita.</p>
+          <p>Per la <a href="/servizi/valutazione-composizione-corporea-cagliari/">valutazione della composizione corporea</a> utilizzo la bioimpedenziometria (BIA), la plicometria e le circonferenze. Per quanto riguarda la plicometria in particolare, seguo il rinomato protocollo ISAK, un metodo standardizzato che mi consente di eseguire misurazioni di qualità</p>
           <h2>La ricerca e il mio modo di lavorare</h2>
           <p>Ho partecipato a studi su microbiota e barriera intestinale. Nella pagina <a href="/pubblicazioni-scientifiche/">Pubblicazioni scientifiche</a> trovi riferimenti, DOI e collegamenti a PubMed, insieme a una breve spiegazione dei limiti di ciascun lavoro.</p>
           <p>La ricerca mi ha insegnato a fare domande e a distinguere un risultato promettente da ciò che possiamo applicare alla persona. Nel percorso nutrizionale questo significa ascoltare, valutare e rivedere insieme le scelte.</p>
