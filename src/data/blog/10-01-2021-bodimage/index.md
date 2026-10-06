@@ -1,7 +1,6 @@
 ---
 cover: "./cover.webp"
-coverAlt: ""
-coverDecorative: true
+coverAlt: "Illustrazione del corpo umano di fronte e di profilo con riferimenti anatomici e linee di misurazione"
 category: "Antropometria"
 relatedServices: ["valutazione-composizione-corporea-cagliari"]
 path: "/bodimage-per-visite-nutrizionali-online-cosa-e/"
