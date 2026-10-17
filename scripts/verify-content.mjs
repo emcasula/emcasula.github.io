@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 const root = process.cwd();
 const sandbox = mkdtempSync(join(tmpdir(), 'astro-content-test-'));
 try {
-  for (const name of ['src','public','astro.config.mjs','config.mjs','package.json','tsconfig.json']) cpSync(join(root,name),join(sandbox,name),{recursive:true});
+  for (const name of ['integrations', 'src','public','astro.config.mjs','config.mjs','package.json','tsconfig.json']) cpSync(join(root,name),join(sandbox,name),{recursive:true});
   symlinkSync(join(root,'node_modules'),join(sandbox,'node_modules'),'dir');
   const serviceFile = join(sandbox,'src/data/services/nutrizione-sportiva-cagliari.json');
   const service = JSON.parse(readFileSync(serviceFile,'utf8'));

@@ -9,6 +9,7 @@ const services = readdirSync('src/data/services').filter(name => name.endsWith('
 const output = join(process.cwd(), 'dist');
 const pages = ['index.html', '404.html', ...['Blog', 'ChiSono', 'Contatti', 'Elements', 'Generic', 'Privacy', 'ThankYou'].map(p => `${p}/index.html`), ...[...services.map(s => s.href), '/servizi/', '/pubblicazioni-scientifiche/'].map(p => `${p.replace(/^\/+|\/+$/g, '')}/index.html`), ...getBlogPosts().map(p => `${p.frontmatter.path.replace(/^\/+|\/+$/g, '')}/index.html`)];
 const read = file => readFileSync(join(output, file), 'utf8');
+const decodeHTML = text => text.replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(m => attrs(m[0]));
 const titles = new Set(), descriptions = new Set();
@@ -29,8 +30,8 @@ for (const file of pages) {
   assert(title && !titles.has(title), `Title duplicato/vuoto: ${file}`); titles.add(title);
   const description = value('description');
   assert(description && !descriptions.has(description), `Description duplicata/vuota: ${file}`); descriptions.add(description);
-  assert.equal(value('og:title'), title, file);
-  assert.equal(value('og:description'), description, file);
+  assert.equal(decodeHTML(value('og:title')), decodeHTML(title), file);
+  assert.equal(decodeHTML(value('og:description')), decodeHTML(description), file);
   const image = new URL(value('og:image'));
   assert.equal(image.origin, config.url);
   assert(existsSync(join(output, image.pathname)), `Immagine OG: ${file}`);

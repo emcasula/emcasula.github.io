@@ -16,3 +16,9 @@ yarn.lock
 !/scripts/verify-blog.mjs
 !/scripts/verify-content.mjs
 !/scripts/read-blog-fixtures.mjs
+
+/integrations/*
+!/integrations/complete-sitemap.mjs
+!/integrations/sitemap-audit.mjs
+!/scripts/verify-sitemap.mjs
+!/scripts/verify-sitemap-fixtures.mjs

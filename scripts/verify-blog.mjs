@@ -9,7 +9,7 @@ import { getBlogPosts } from './read-blog-fixtures.mjs';
 const root = process.cwd();
 const sandbox = mkdtempSync(join(tmpdir(), 'seo-blog-test-'));
 try {
-  for (const entry of ['src', 'public', 'astro.config.mjs', 'config.mjs', 'package.json', 'tsconfig.json']) cpSync(join(root, entry), join(sandbox, entry), { recursive: true });
+  for (const entry of ['integrations', 'src', 'public', 'astro.config.mjs', 'config.mjs', 'package.json', 'tsconfig.json']) cpSync(join(root, entry), join(sandbox, entry), { recursive: true });
   symlinkSync(join(root, 'node_modules'), join(sandbox, 'node_modules'), 'dir');
   const blog = join(sandbox, 'src/data/blog');
   const draft = join(blog, 'draft-fixture');
@@ -31,12 +31,14 @@ try {
   assert(!existsSync(join(sandbox, 'dist/seo-draft-fixture/index.html')));
   for (const path of ['Blog/index.html', 'sitemap-0.xml']) assert(!read(path).includes('seo-draft-fixture'));
   const article = read('seo-published-fixture/index.html');
+  const sitemapBeforeRebuild = read('sitemap-0.xml');
   assert(article.includes('Ultima revisione:'));
   assert(article.includes('2024-03-04T12:00:00.000Z'));
   assert(!article.includes('missing-cover.jpg'));
   const schemas = html => [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]));
   build();
   assert.deepEqual(schemas(read('seo-published-fixture/index.html')), schemas(article), 'A rebuild changed editorial dates/schema');
+  assert.equal(read('sitemap-0.xml'), sitemapBeforeRebuild, 'A rebuild changed sitemap editorial lastmod');
   // With only a draft, listing and sitemap must still build without articles.
   for (const entry of readdirSync(blog)) if (entry !== 'draft-fixture') rmSync(join(blog, entry), { recursive: true });
   assert.deepEqual(getBlogPosts(blog), []);
